@@ -52,3 +52,39 @@ logs
 # Misc
 .DS_Store
 Thumbs.db 
+# Node modules
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production
+*.env
+
+# Build outputs
+dist/
+build/
+.next/
+.medusa/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Package manager files
+yarn-error.log
+package-lock.json
+
+# Temporary files
+.tmp/
+temp/
