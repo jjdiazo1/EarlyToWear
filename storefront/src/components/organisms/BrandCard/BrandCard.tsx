@@ -1,21 +1,72 @@
+// storefront/src/components/organisms/BrandCard/BrandCard.tsx
 import { Link } from "@/i18n/routing"
 import Image from "next/image"
-import { Brand } from "@/types/brands"
+import { SellerProps } from "@/types/seller"
+import { StarRating } from "@/components/atoms"
 
 interface BrandCardProps {
-  brand: Brand
+  seller: SellerProps
+  showStats?: boolean
 }
 
-export function BrandCard({ brand }: BrandCardProps) {
+export function BrandCard({ seller, showStats = true }: BrandCardProps) {
+  const reviewCount = seller.reviews?.filter((rev) => rev !== null).length || 0
+  const rating = seller.reviews && seller.reviews.length > 0
+    ? seller.reviews
+        .filter((rev) => rev !== null)
+        .reduce((sum, r) => sum + (r?.rating || 0), 0) / reviewCount
+    : 0
+
   return (
-    <Link href={brand.href}>
-      <div className="relative border border-secondary rounded-sm bg-action h-[320px] w-[320px] 2xl:h-[400px] 2xl:w-[400px] flex items-center justify-center hover:rounded-full transition-all duration-200">
-        <Image
-          src={decodeURIComponent(brand.logo)}
-          alt={brand.name}
-          fill
-          className="object-contain brightness-0 invert"
-        />
+    <Link href={`/sellers/${seller.handle}`}>
+      <div className="group relative border border-secondary rounded-sm bg-primary hover:bg-action transition-all duration-300 p-6 flex flex-col items-center text-center min-h-[280px] w-[280px]">
+        {/* Brand Logo/Avatar */}
+        <div className="relative w-20 h-20 mb-4 overflow-hidden rounded-full bg-component">
+          {seller.photo ? (
+            <Image
+              src={decodeURIComponent(seller.photo)}
+              alt={seller.name}
+              fill
+              className="object-cover"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-action text-tertiary font-bold text-2xl">
+              {seller.name.charAt(0).toUpperCase()}
+            </div>
+          )}
+        </div>
+
+        {/* Brand Name */}
+        <h3 className="heading-md text-primary group-hover:text-tertiary transition-colors mb-2">
+          {seller.name}
+        </h3>
+
+        {/* Brand Description */}
+        <p className="text-sm text-secondary group-hover:text-tertiary line-clamp-2 mb-4 flex-grow">
+          {seller.description?.replace(/<[^>]*>/g, '') || 'Premium fashion brand'}
+        </p>
+
+        {/* Stats */}
+        {showStats && (
+          <div className="flex flex-col items-center space-y-2">
+            {rating > 0 && (
+              <div className="flex items-center gap-2">
+                <StarRating rate={rating} starSize={14} />
+                <span className="text-sm text-secondary group-hover:text-tertiary">
+                  ({reviewCount})
+                </span>
+              </div>
+            )}
+            {seller.products && (
+              <span className="text-xs text-secondary group-hover:text-tertiary">
+                {seller.products.length} Products
+              </span>
+            )}
+          </div>
+        )}
+
+        {/* Hover Effect */}
+        <div className="absolute inset-0 rounded-sm border-2 border-transparent group-hover:border-tertiary transition-all duration-300 pointer-events-none" />
       </div>
     </Link>
   )
