@@ -1,4 +1,14 @@
 {
   "/[locale]/(main)/page": "app/[locale]/(main)/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/[locale]/(main)/products/[handle]/page": "app/[locale]/(main)/products/[handle]/page.js",
+  "/[locale]/(main)/sellers/[handle]/page": "app/[locale]/(main)/sellers/[handle]/page.js",
+  "/[locale]/(main)/categories/page": "app/[locale]/(main)/categories/page.js",
+  "/[locale]/(main)/categories/[category]/page": "app/[locale]/(main)/categories/[category]/page.js",
+  "/[locale]/(main)/user/page": "app/[locale]/(main)/user/page.js",
+  "/[locale]/(main)/user/register/page": "app/[locale]/(main)/user/register/page.js",
+  "/[locale]/(main)/user/orders/page": "app/[locale]/(main)/user/orders/page.js",
+  "/[locale]/(main)/user/reviews/page": "app/[locale]/(main)/user/reviews/page.js",
+  "/[locale]/(main)/user/wishlist/page": "app/[locale]/(main)/user/wishlist/page.js",
+  "/[locale]/(main)/user/settings/page": "app/[locale]/(main)/user/settings/page.js",
+  "/[locale]/(main)/cart/page": "app/[locale]/(main)/cart/page.js"
 }
