@@ -86,9 +86,9 @@ NEXT_PUBLIC_STRIPE_KEY=supersecret
 # Backend cookie secret
 REVALIDATE_SECRET=supersecret
 # Your site name in metadata
-NEXT_PUBLIC_SITE_NAME="Fleek Marketplace"
+NEXT_PUBLIC_SITE_NAME="Early To Wear"
 # Your site description in metadata
-NEXT_PUBLIC_SITE_DESCRIPTION="Fleek Markeplace"
+NEXT_PUBLIC_SITE_DESCRIPTION="The AI marketplace for finding your favorite clothes"
 # Algolia Application ID
 NEXT_PUBLIC_ALGOLIA_ID=supersecret
 # Algolia Search API Key

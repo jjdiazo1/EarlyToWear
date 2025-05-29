@@ -1,3 +1,4 @@
+// storefront/src/app/[locale]/(main)/page.tsx - ACTUALIZADA
 import {
   AlgoliaTrendingListings,
   BannerSection,
@@ -8,6 +9,8 @@ import {
   HomeProductSection,
   ShopByStyleSection,
 } from "@/components/sections"
+import { BrandsCarousel } from "@/components/sections/BrandsCarousel/BrandsCarousel"
+import { getFeaturedBrands } from "@/lib/data/brands"
 
 import type { Metadata } from "next"
 
@@ -39,6 +42,9 @@ export default async function Home({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
+  
+  // Fetch featured brands
+  const featuredBrands = await getFeaturedBrands(8)
 
   return (
     <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start text-primary">
@@ -60,6 +66,17 @@ export default async function Home({
       <div className="px-4 lg:px-8 w-full">
         <HomeProductSection heading="trending listings" locale={locale} home />
       </div>
+      
+      {/* Featured Brands Section */}
+      {featuredBrands.length > 0 && (
+        <div className="px-4 lg:px-8 w-full">
+          <BrandsCarousel 
+            brands={featuredBrands}
+            title="Featured Brands"
+          />
+        </div>
+      )}
+      
       {/* <HomePopularBrandsSection />*/}
       <div className="px-4 lg:px-8 w-full">
         <HomeCategories heading="SHOP BY CATEGORY" />

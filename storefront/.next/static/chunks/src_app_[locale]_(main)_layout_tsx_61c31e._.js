@@ -6,7 +6,7 @@
   "path": "static/chunks/src_app_[locale]_(main)_layout_tsx_61c31e._.js",
   "chunks": [
     "static/chunks/src_icons_9fcb82._.js",
-    "static/chunks/src_components_de1f15._.js",
+    "static/chunks/src_components_bfef21._.js",
     "static/chunks/src_cf47a9._.js",
     "static/chunks/tailwind_config_ts_a28339._.js",
     "static/chunks/node_modules_next_92d10d._.js",

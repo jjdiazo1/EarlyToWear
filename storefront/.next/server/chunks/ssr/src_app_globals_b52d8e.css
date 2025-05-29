@@ -1912,6 +1912,10 @@ img, video {
   font-weight: 600;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -1982,6 +1986,11 @@ img, video {
 
 .text-tertiary {
   color: rgba(var(--content-tertiary));
+}
+
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
 }
 
 .underline {

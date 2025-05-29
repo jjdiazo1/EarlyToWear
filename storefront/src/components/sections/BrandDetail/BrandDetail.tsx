@@ -4,8 +4,7 @@ import { HttpTypes } from "@medusajs/types"
 import { StarRating, Button, Divider } from "@/components/atoms"
 import { Chat } from "@/components/organisms/Chat/Chat"
 import Image from "next/image"
-import { format } from "date-fns"
-import { DoneIcon, MessageIcon } from "@/icons"
+import { MessageIcon } from "@/icons"
 
 interface BrandDetailProps {
   seller: SellerProps
@@ -53,7 +52,7 @@ export function BrandDetail({ seller, user }: BrandDetailProps) {
                   </div>
                 )}
                 <Divider orientation="vertical" className="h-4" />
-                <span>Joined {format(new Date(seller.created_at), "MMMM yyyy")}</span>
+                <span>Joined {new Date(seller.created_at).getFullYear()}</span>
                 {seller.products && (
                   <>
                     <Divider orientation="vertical" className="h-4" />
@@ -110,7 +109,7 @@ export function BrandDetail({ seller, user }: BrandDetailProps) {
         </div>
         <div className="text-center">
           <div className="heading-md text-primary">
-            {format(new Date(seller.created_at), "yyyy")}
+            {new Date(seller.created_at).getFullYear()}
           </div>
           <div className="text-sm text-secondary uppercase">Since</div>
         </div>
