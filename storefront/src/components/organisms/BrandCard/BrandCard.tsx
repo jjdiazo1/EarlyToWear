@@ -1,4 +1,3 @@
-// storefront/src/components/organisms/BrandCard/BrandCard.tsx
 import { Link } from "@/i18n/routing"
 import Image from "next/image"
 import { SellerProps } from "@/types/seller"
@@ -19,7 +18,7 @@ export function BrandCard({ seller, showStats = true }: BrandCardProps) {
 
   return (
     <Link href={`/sellers/${seller.handle}`}>
-      <div className="group relative border border-secondary rounded-sm bg-primary hover:bg-action transition-all duration-300 p-6 flex flex-col items-center text-center min-h-[280px] w-[280px]">
+      <div className="group relative border border-secondary rounded-sm bg-primary transition-all duration-300 p-6 flex flex-col items-center text-center min-h-[280px] w-[280px]">
         {/* Brand Logo/Avatar */}
         <div className="relative w-20 h-20 mb-4 overflow-hidden rounded-full bg-component">
           {seller.photo ? (
@@ -30,19 +29,18 @@ export function BrandCard({ seller, showStats = true }: BrandCardProps) {
               className="object-cover"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-action text-tertiary font-bold text-2xl">
+            <div className="w-full h-full flex items-center justify-center bg-action text-white font-bold text-2xl">
               {seller.name.charAt(0).toUpperCase()}
             </div>
           )}
         </div>
 
-        {/* Brand Name */}
-        <h3 className="heading-md text-primary group-hover:text-tertiary transition-colors mb-2">
+        {/* Brand Name - Negro normal, rainbow en hover */}
+        <h3 className="heading-md mb-2 text-primary font-bold group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:via-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
           {seller.name}
         </h3>
-
         {/* Brand Description */}
-        <p className="text-sm text-secondary group-hover:text-tertiary line-clamp-2 mb-4 flex-grow">
+        <p className="text-sm text-secondary group-hover:text-gray-700 line-clamp-2 mb-4 flex-grow transition-colors duration-300">
           {seller.description?.replace(/<[^>]*>/g, '') || 'Premium fashion brand'}
         </p>
 
@@ -52,21 +50,21 @@ export function BrandCard({ seller, showStats = true }: BrandCardProps) {
             {rating > 0 && (
               <div className="flex items-center gap-2">
                 <StarRating rate={rating} starSize={14} />
-                <span className="text-sm text-secondary group-hover:text-tertiary">
+                <span className="text-sm text-secondary group-hover:text-gray-600 transition-colors duration-300">
                   ({reviewCount})
                 </span>
               </div>
             )}
             {seller.products && (
-              <span className="text-xs text-secondary group-hover:text-tertiary">
+              <span className="text-xs text-secondary group-hover:text-purple-600 transition-colors duration-300 font-medium">
                 {seller.products.length} Products
               </span>
             )}
           </div>
         )}
 
-        {/* Hover Effect */}
-        <div className="absolute inset-0 rounded-sm border-2 border-transparent group-hover:border-tertiary transition-all duration-300 pointer-events-none" />
+        {/* Hover Effect - Solo border */}
+        <div className="absolute inset-0 rounded-sm border-2 border-transparent group-hover:border-purple-300 transition-all duration-300 pointer-events-none" />
       </div>
     </Link>
   )
