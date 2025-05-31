@@ -54,20 +54,24 @@ export function BrandsCarousel({ brands, title = "Featured Brands" }: BrandsCaro
           </div>
         </div>
 
-        {/* Carousel - SIMPLE */}
+        {/* Carousel con mejor spacing */}
         <div className="relative">
           <Carousel
             align="start"
             items={brands.map((brand, index) => (
               <div
                 key={brand.id}
-                className="group relative"
+                className="group relative carousel-item"
+                style={{ 
+                  marginRight: '1.5rem',
+                  animationDelay: `${index * 100}ms`
+                }}
               >
-                {/* Halo effect for each card */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-gradient-to-r from-indigo-600/10 via-purple-600/10 to-pink-600/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110 -z-10"></div>
+                {/* Halo effect - del tamaño exacto de la card */}
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/5 via-purple-600/5 to-pink-600/5 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10"></div>
                 
-                {/* Card wrapper with enhanced animations */}
-                <div className="relative transform transition-all duration-300 hover:scale-105 hover:-translate-y-2">
+                {/* Card wrapper */}
+                <div className="relative transform transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1">
                   <SellersCard
                     seller={brand}
                     showStats={true}

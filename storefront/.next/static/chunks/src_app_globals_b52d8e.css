@@ -2547,6 +2547,12 @@ img, video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-indigo-600\/5 {
+  --tw-gradient-from: rgba(var(--indigo-600), .05) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(var(--indigo-600), 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-blue-50 {
   --tw-gradient-to: #eff6ff00 var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #eff6ff var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -2660,6 +2666,11 @@ img, video {
 .via-purple-600\/10 {
   --tw-gradient-to: rgba(var(--purple-600), 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgba(var(--purple-600), .1) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.via-purple-600\/5 {
+  --tw-gradient-to: rgba(var(--purple-600), 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(var(--purple-600), .05) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .to-blue-100\/20 {
@@ -2868,6 +2879,10 @@ img, video {
 
 .to-pink-600\/10 {
   --tw-gradient-to: rgba(var(--pink-600), .1) var(--tw-gradient-to-position);
+}
+
+.to-pink-600\/5 {
+  --tw-gradient-to: rgba(var(--pink-600), .05) var(--tw-gradient-to-position);
 }
 
 .bg-clip-text {

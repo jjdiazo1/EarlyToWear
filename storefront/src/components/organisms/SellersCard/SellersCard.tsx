@@ -23,7 +23,7 @@ export function SellersCard({ seller, showStats = false, size = 'default' }: Sel
 
   return (
     <Link href={`/brands/${seller.handle || seller.id}`} className="block w-full">
-      <article className="group relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 overflow-hidden min-w-[320px]">
+      <article className="group relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 overflow-hidden w-80 flex-shrink-0">
         {/* Shine effect overlay */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-white/0 via-white/60 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full z-20"></div>
         
