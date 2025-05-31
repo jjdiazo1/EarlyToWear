@@ -56,8 +56,9 @@ export const CustomCarousel = ({
   return (
     <div className='embla relative w-full flex justify-center'>
       <div
-        className='embla__viewport overflow-hidden rounded-xs w-full xl:flex xl:justify-center'
+        className='embla__viewport rounded-xs w-full xl:flex xl:justify-center'
         ref={emblaRef}
+        style={{ overflow: 'visible' }}
       >
         <div className='embla__container flex'>
           {items.map((slide) => slide)}
