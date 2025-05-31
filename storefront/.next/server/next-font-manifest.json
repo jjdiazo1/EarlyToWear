@@ -19,6 +19,11 @@
       "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
       "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.4e81035a.woff2",
       "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
+    ],
+    "[project]/src/app/[locale]/(main)/cart/page": [
+      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
+      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.4e81035a.woff2",
+      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
     ]
   },
   "appUsingSizeAdjust": true,

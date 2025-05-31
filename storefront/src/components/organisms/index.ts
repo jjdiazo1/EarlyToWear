@@ -13,6 +13,7 @@ import { GalleryCarousel } from "./GalleryCarousel/GalleryCarousel"
 import { SellerHeading } from "./SellerHeading/SellerHeading"
 import { SellerFooter } from "./SellerFooter/SellerFooter"
 import { SellerTabs } from "./SellerTabs/SellerTabs"
+import { SellersCard } from "./SellersCard/SellersCard"
 import { CartSummary } from "./CartSummary/CartSummary"
 import { CartItems } from "./CartItems/CartItems"
 import { WishlistTabs } from "./WishlistTabs/WishlistTabs"
@@ -32,6 +33,7 @@ export {
   ProductListingHeader,
   ProductsList,
   ProductsPagination,
+  SellersCard,
   ProductSidebar,
   ProductListingActiveFilters,
   Header,
