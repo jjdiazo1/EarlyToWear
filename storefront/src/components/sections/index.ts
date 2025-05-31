@@ -1,6 +1,5 @@
 import { Hero } from "./Hero/Hero"
 import { HomeProductSection } from "./HomeProductSection/HomeProductSection"
-import { HomePopularBrandsSection } from "./HomePopularBrandsSection/HomePopularBrandsSection"
 import { HomeCategories } from "./HomeCategories/HomeCategories"
 import { BannerSection } from "./BannerSection/BannerSection"
 import { ShopByStyleSection } from "./ShopByStyle/ShopByStyleSection"
@@ -18,7 +17,6 @@ import { BrandsListing } from "./BrandListing/BrandsListing"
 export {
   Hero,
   HomeProductSection,
-  HomePopularBrandsSection,
   HomeCategories,
   BannerSection,
   ShopByStyleSection,

@@ -5,7 +5,6 @@ import {
   BlogSection,
   Hero,
   HomeCategories,
-  HomePopularBrandsSection,
   HomeProductSection,
   ShopByStyleSection,
 } from "@/components/sections"

@@ -3,6 +3,16 @@ import { Funnel_Display } from "next/font/google"
 import "./globals.css"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
+import { Inter } from 'next/font/google'
+// Importar Anton
+import { Anton } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
+const anton = Anton({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-anton'
+})
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-sans",
