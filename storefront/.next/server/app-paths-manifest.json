@@ -1,7 +1,7 @@
 {
   "/[locale]/(main)/page": "app/[locale]/(main)/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/[locale]/(main)/brands/page": "app/[locale]/(main)/brands/page.js",
   "/[locale]/(main)/categories/page": "app/[locale]/(main)/categories/page.js",
-  "/[locale]/(main)/categories/[category]/page": "app/[locale]/(main)/categories/[category]/page.js"
+  "/[locale]/(main)/brands/page": "app/[locale]/(main)/brands/page.js",
+  "/[locale]/(main)/categories/[category]/page": "app/[locale]/(main)/categories/[category]/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

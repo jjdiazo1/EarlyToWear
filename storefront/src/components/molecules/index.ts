@@ -21,7 +21,6 @@ import { ReportSellerForm } from "./ReportSellerForm/ReportSellerForm"
 import { ProductPostedDate } from "./ProductPostedDate/ProductPostedDate"
 import { ProductReportButton } from "./ProductReportButton/ProductReportButton"
 import { ProductVariants } from "./ProductVariants/ProductVariants"
-import { HeaderCategoryNavbar } from "./HeaderCategoryNavbar/HeaderCategoryNavbar"
 import { DeleteCartItemButton } from "./DeleteCartItemButton/DeleteCartItemButton"
 import { Dropdown } from "./Dropdown/Dropdown"
 import { CartDropdownItem } from "./CartDropdownItem/CartDropdownItem"
@@ -57,7 +56,6 @@ export {
   ProductPostedDate,
   ProductReportButton,
   ProductVariants,
-  HeaderCategoryNavbar,
   DeleteCartItemButton,
   Dropdown,
   CartDropdownItem,

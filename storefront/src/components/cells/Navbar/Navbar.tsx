@@ -13,11 +13,6 @@ export const Navbar = ({
     <div className="flex border py-4 justify-between px-6">
       <div className="hidden md:flex items-center gap-6">
         <CategoryNavbar categories={categories} />
-        <Link href="/brands">
-          <Button variant="text" className="uppercase font-medium px-4">
-            Brands
-          </Button>
-        </Link>
       </div>
 
       <NavbarSearch />
