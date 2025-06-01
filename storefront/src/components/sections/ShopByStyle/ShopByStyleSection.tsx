@@ -296,7 +296,7 @@ export function ShopByStyleSection() {
                   
                   {/* AI Detection Points - Only ONE active at a time */}
                   {[
-                    { top: '15%', left: '25%', label: 'TEXTURE ANALYSIS' },
+                    { top: '15%', left: '15%', label: 'TEXTURE ANALYSIS' },
                     { top: '35%', left: '70%', label: 'COLOR PALETTE' },
                     { top: '65%', left: '20%', label: 'PATTERN RECOGNITION' },
                     { top: '50%', left: '85%', label: 'STYLE DNA' },
