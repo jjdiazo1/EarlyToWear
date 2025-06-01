@@ -8,6 +8,7 @@ import { convertToLocale } from "@/lib/helpers/money";
 import { HttpTypes } from "@medusajs/types";
 import { useEffect, useRef, useState } from "react";
 import { PortalDropdown } from "@/components/molecules";
+import { useRouter } from "next/navigation";
 
 const getItemCount = (cart: HttpTypes.StoreCart | null) => {
   return cart?.items?.reduce((acc, item) => acc + item.quantity, 0) || 0;
@@ -16,6 +17,8 @@ const getItemCount = (cart: HttpTypes.StoreCart | null) => {
 export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const router = useRouter();
 
   const cartItemsCount = getItemCount(cart);
   const total = convertToLocale({
@@ -23,9 +26,75 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
     currency_code: cart?.currency_code || "eur",
   });
 
+  // Función para abrir con delay
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setOpen(true);
+  };
+
+  // Función para cerrar con delay
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setOpen(false);
+    }, 150);
+  };
+
+  // Navegación al carrito (RESTAURADA - la que funcionaba)
+  const goToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("🛒 GO TO CART CLICKED!");
+    console.log("🛒 Closing dropdown...");
+    setOpen(false);
+    
+    // Navegación múltiple para asegurar que funcione
+    console.log("🛒 Attempting navigation...");
+    
+    // Método 1: useRouter
+    try {
+      router.push("/cart");
+      console.log("✅ router.push called");
+    } catch (error) {
+      console.error("❌ router.push failed:", error);
+    }
+    
+    // Método 2: window.location como backup
+    setTimeout(() => {
+      console.log("🛒 Backup navigation with window.location");
+      window.location.href = "/cart";
+    }, 100);
+  };
+
+  // Navegación a categorías (RESTAURADA - la que funcionaba)
+  const goToCategories = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("📂 GO TO CATEGORIES CLICKED!");
+    setOpen(false);
+    
+    try {
+      router.push("/categories");
+      console.log("✅ router.push to categories called");
+    } catch (error) {
+      console.error("❌ router.push to categories failed:", error);
+      window.location.href = "/categories";
+    }
+  };
+
+  // Cleanup del timeout
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
+
   /**
    * Cerrar el dropdown al hacer clic fuera del contenedor
-   * (para que no se quede abierto indefinidamente):
    */
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -47,18 +116,18 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
   }, [open]);
 
   return (
-    // 1) Esta envoltura “captura” hover + clic para abrir/cerrar el dropdown
     <div
       className="relative z-cart"
       ref={containerRef}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      {/* Ícono del carrito: clic para alternar visual */}
+      {/* Ícono del carrito */}
       <button
         onClick={() => setOpen((prev) => !prev)}
         className="relative cursor-pointer p-1"
         aria-label="Abrir carrito"
+        onMouseEnter={handleMouseEnter}
       >
         <CartIcon
           size={24}
@@ -74,9 +143,13 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
         )}
       </button>
 
-      {/* 2) El dropdown se “portaliza” y se dibuja en <body>, con posición fija */}
+      {/* Portal dropdown */}
       <PortalDropdown show={open}>
-        <div className="p-4">
+        <div 
+          className="p-4"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {/* Encabezado del dropdown */}
           <div className="flex items-center gap-2 mb-4">
             <div className="h-1 w-6 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
@@ -90,7 +163,7 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
 
           {cartItemsCount > 0 ? (
             <>
-              {/* 3) Aumentamos la altura máxima para ver 2–3 productos */}
+              {/* Lista de productos */}
               <div className="space-y-3 max-h-80 overflow-y-auto mb-4 pr-2">
                 {cart?.items?.map((item) => (
                   <CartDropdownItem
@@ -101,7 +174,7 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
                 ))}
               </div>
 
-              {/* Total y botón “Ver Carrito” */}
+              {/* Total y botón */}
               <div className="border-t border-gray-200/50 pt-4">
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-gray-700 font-medium">Total</span>
@@ -112,28 +185,33 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
                     {total}
                   </span>
                 </div>
-                <Link href="/cart">
-                  <button
-                    className="w-full py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 
-                               hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl 
-                               transition-all duration-300 flex justify-center items-center gap-2"
+                
+                {/* Botón EXACTO que funcionaba antes */}
+                <button
+                  type="button"
+                  onClick={goToCart}
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onMouseUp={(e) => e.stopPropagation()}
+                  className="w-full py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 
+                             hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl 
+                             transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer"
+                  style={{ pointerEvents: 'auto', zIndex: 9999999 }}
+                >
+                  <span>Go to cart</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-white"
                   >
-                    <span>Ver Carrito</span>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-white"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </Link>
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </>
           ) : (
@@ -163,15 +241,19 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
               <p className="text-sm text-gray-600 mb-4">
                 Agrega artículos para comenzar
               </p>
-              <Link href="/categories">
-                <button
-                  className="w-full py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 
-                             hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl 
-                             transition-all duration-300"
-                >
-                  Explorar productos
-                </button>
-              </Link>
+              
+              {/* Botón EXACTO que funcionaba antes */}
+              <button
+                onClick={goToCategories}
+                onMouseDown={(e) => e.stopPropagation()}
+                onMouseUp={(e) => e.stopPropagation()}
+                className="w-full py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 
+                           hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl 
+                           transition-all duration-300 cursor-pointer"
+                style={{ pointerEvents: 'auto', zIndex: 9999999 }}
+              >
+                Explorar productos
+              </button>
             </div>
           )}
         </div>

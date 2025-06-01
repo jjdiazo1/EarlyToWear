@@ -1,4 +1,4 @@
-// components/RadarOverlay.tsx
+// components/cells/RadarOverlay/RadarOverlay.tsx
 
 "use client";
 
@@ -8,7 +8,7 @@ export default function RadarOverlay() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>(0);
 
-  // Coordenadas polares ficticias de tiendas locales (ángulo en °, radio normalizado)
+  // Tiendas ficticias (ángulo en °, radio normalizado)
   const blips = [
     { angle: 20, radius: 0.4 },
     { angle: 75, radius: 0.6 },
@@ -27,7 +27,7 @@ export default function RadarOverlay() {
     let height = canvas.parentElement?.clientHeight || 0;
     const size = Math.min(width, height);
 
-    // Ajustamos tamaño del canvas al contenedor
+    // Ajustamos tamaño del canvas
     canvas.width = width;
     canvas.height = height;
 
@@ -35,29 +35,53 @@ export default function RadarOverlay() {
     const centerY = height / 2;
     const radarRadius = (size / 2) * 0.9; // 90% del semilado menor
 
-    let sweepAngle = 0; // Ángulo inicial de la manecilla (en grados)
+    let sweepAngle = 0; // Ángulo inicial de la manecilla
 
     const drawFrame = () => {
       if (!ctx) return;
-      // Limpiamos el canvas
+
+      // Limpiamos el canvas cada fotograma
       ctx.clearRect(0, 0, width, height);
 
-      /** 1. DIBUJAMOS SOLO EL CONTORNO EXTERIOR DEL RADAR (OPACIDAD BAJA) **/
+      /** 1. Dibujamos la cuadrícula de radar (círculos concéntricos + líneas radiales) **/
       ctx.save();
       ctx.translate(centerX, centerY);
-      ctx.strokeStyle = "rgba(147,51,234,0.1)"; // contorno muy tenue
+      
+      // Círculos concéntricos (líneas de rango)
+      ctx.strokeStyle = "rgba(147,51,234,0.08)";
+      ctx.lineWidth = 1;
+      for (let i = 1; i <= 4; i++) {
+        const radius = (radarRadius * i) / 4;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      
+      // Líneas radiales (ejes cardinales)
+      ctx.strokeStyle = "rgba(147,51,234,0.06)";
+      ctx.lineWidth = 1;
+      for (let angle = 0; angle < 360; angle += 45) {
+        const rad = (angle * Math.PI) / 180;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(Math.cos(rad) * radarRadius, Math.sin(rad) * radarRadius);
+        ctx.stroke();
+      }
+      
+      // Contorno circular exterior
+      ctx.strokeStyle = "rgba(147,51,234,0.12)";
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.arc(0, 0, radarRadius, 0, Math.PI * 2);
       ctx.stroke();
       ctx.restore();
 
-      /** 2. DIBUJAMOS LA MANECILLA ROTATORIA + HALO “FOLLOW” **/
+      /** 2. Dibujamos la manecilla + halo "follow" ampliado **/
       ctx.save();
       ctx.translate(centerX, centerY);
       const sweepRad = (sweepAngle * Math.PI) / 180;
 
-      // Dibujamos la línea de la manecilla
+      // Línea sólida de la manecilla
       ctx.strokeStyle = "rgba(147,51,234,0.9)"; // púrpura intenso
       ctx.lineWidth = 3;
       ctx.beginPath();
@@ -68,52 +92,42 @@ export default function RadarOverlay() {
       );
       ctx.stroke();
 
-      // Dibujamos un “halo” detrás de la punta de la manecilla:
-      // Un arco muy delgado (ej. 10° de ancho) directamente posterior al sweep
-      const haloWidthRad = (10 * Math.PI) / 180; // 10°
-      const startHalo = sweepRad - haloWidthRad;
-      const endHalo = sweepRad;
-
-      // Creamos gradiente radial para el halo
-      const haloGradient = ctx.createRadialGradient(
-        0,
-        0,
-        0,
-        0,
-        0,
-        radarRadius
-      );
-      haloGradient.addColorStop(0, "rgba(147,51,234,0.5)");
-      haloGradient.addColorStop(1, "rgba(147,51,234,0)");
-
-      ctx.fillStyle = haloGradient;
+      // Halo posterior: un arco de 60° detrás de la manecilla (área balanceada)
+      const haloWidthDeg = 60; // área balanceada para el halo
+      const haloStart = sweepRad - (haloWidthDeg * Math.PI) / 180;
+      const haloEnd = sweepRad;
+      const haloGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, radarRadius);
+      haloGrad.addColorStop(0, "rgba(147,51,234,0.5)");
+      haloGrad.addColorStop(0.4, "rgba(147,51,234,0.25)");
+      haloGrad.addColorStop(1, "rgba(147,51,234,0)");
+      ctx.fillStyle = haloGrad;
       ctx.beginPath();
       ctx.moveTo(0, 0);
-      ctx.arc(0, 0, radarRadius, startHalo, endHalo);
+      ctx.arc(0, 0, radarRadius, haloStart, haloEnd);
       ctx.closePath();
       ctx.fill();
 
-      // Dibujamos un pequeño círculo brillante en la punta
+      // Punto brillante en la punta de la manecilla
       const glowX = Math.cos(sweepRad) * radarRadius;
       const glowY = Math.sin(sweepRad) * radarRadius;
-      const glowGrad = ctx.createRadialGradient(
+      const pointerGrad = ctx.createRadialGradient(
         glowX,
         glowY,
         0,
         glowX,
         glowY,
-        radarRadius * 0.05
+        radarRadius * 0.06
       );
-      glowGrad.addColorStop(0, "rgba(147,51,234,0.9)");
-      glowGrad.addColorStop(1, "rgba(147,51,234,0)");
-      ctx.fillStyle = glowGrad;
+      pointerGrad.addColorStop(0, "rgba(147,51,234,1)");
+      pointerGrad.addColorStop(1, "rgba(147,51,234,0)");
+      ctx.fillStyle = pointerGrad;
       ctx.beginPath();
-      ctx.arc(glowX, glowY, radarRadius * 0.05, 0, Math.PI * 2);
+      ctx.arc(glowX, glowY, radarRadius * 0.06, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.restore();
 
-      /** 3. DIBUJAMOS LOS BLIPS CON FADE-OUT ANIMADO **/
+      /** 3. Dibujamos los blips con fade-out super gradual **/
       ctx.save();
       ctx.translate(centerX, centerY);
       blips.forEach((blip) => {
@@ -122,53 +136,120 @@ export default function RadarOverlay() {
         const x = Math.cos(angleRad) * r;
         const y = Math.sin(angleRad) * r;
 
-        // Calculamos la diferencia angular entre sweepAngle y el ángulo del blip
+        // Distancia angular entre sweepAngle y el ángulo del blip
         let delta = Math.abs((sweepAngle % 360) - blip.angle);
-        if (delta > 180) delta = 360 - delta; // manejamos wrap-around
+        if (delta > 180) delta = 360 - delta; // wrap-around
 
-        // Si la manecilla está cerca (±6°), activamos el pulso
-        if (delta < 6) {
-          // Creamos un parámetro de fade basado en qué tan cerca está el sweep exactamente:
-          // Al llegar a delta=0, alfa=1; en delta=6, alfa=0
-          const fadeFactor = 1 - delta / 6; // va de 1 a 0
-          const maxSize = radarRadius * 0.045; // tamaño máximo del blip
-          const blipSize = maxSize * (0.5 + 0.5 * fadeFactor); // 50% → 100% tamaño
-          const alpha = 0.5 + 0.5 * fadeFactor; // de 0.5 → 1
+        // 1) Si delta < 8°, blip "brillante" al máximo (+halo)
+        if (delta < 8) {
+          const fadeFactor = 1 - delta / 8; // 1 cuando delta=0, 0 cuando delta=8
+          const maxSize = radarRadius * 0.05; // tamaño máximo
+          const blipSize = maxSize * (0.7 + 0.3 * fadeFactor); // de 70% a 100%
+          const alpha = 0.4 + 0.6 * fadeFactor; // de 0.4 a 1
 
-          // Dibujamos halo del blip (radial, degradado)
-          const haloGrad = ctx.createRadialGradient(x, y, 0, x, y, blipSize * 3);
+          // Halo del blip brillante
+          const haloGrad = ctx.createRadialGradient(
+            x,
+            y,
+            0,
+            x,
+            y,
+            blipSize * 4
+          );
           haloGrad.addColorStop(0, `rgba(147,51,234,${alpha * 0.4})`);
           haloGrad.addColorStop(1, "rgba(147,51,234,0)");
           ctx.fillStyle = haloGrad;
           ctx.beginPath();
-          ctx.arc(x, y, blipSize * 3, 0, Math.PI * 2);
+          ctx.arc(x, y, blipSize * 4, 0, Math.PI * 2);
           ctx.fill();
 
-          // Dibujamos el blip brillante en el centro
+          // Círculo central brillante
           ctx.beginPath();
           ctx.fillStyle = `rgba(147,51,234,${alpha})`;
           ctx.arc(x, y, blipSize, 0, Math.PI * 2);
           ctx.fill();
-        } else {
-          // Blip normal, sin pulso
-          const baseSize = radarRadius * 0.02;
+        }
+        // 2) Si 8° ≤ delta < 25°, primera fase de fade-out gradual
+        else if (delta < 25) {
+          const fadeFactor2 = 1 - (delta - 8) / 17; // 1 a los 8°, 0 a los 25°
+          const baseSize = radarRadius * 0.022;
+          const fadeSize = baseSize * (1 + 0.6 * fadeFactor2); // puede crecer un 60%
+          const alpha2 = 0.35 * fadeFactor2; // de 0.35 a 0
+
+          // Halo durante primera fase de fade-out
+          const haloGrad2 = ctx.createRadialGradient(
+            x,
+            y,
+            0,
+            x,
+            y,
+            fadeSize * 3
+          );
+          haloGrad2.addColorStop(0, `rgba(147,51,234,${alpha2 * 0.5})`);
+          haloGrad2.addColorStop(1, "rgba(147,51,234,0)");
+          ctx.fillStyle = haloGrad2;
           ctx.beginPath();
-          ctx.fillStyle = "rgba(147,51,234,0.3)";
+          ctx.arc(x, y, fadeSize * 3, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Círculo de blip en primera fase
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(147,51,234,${alpha2})`;
+          ctx.arc(x, y, fadeSize, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        // 3) Si 25° ≤ delta < 90°, segunda fase de fade-out MUY gradual
+        else if (delta < 90) {
+          const fadeFactor3 = 1 - (delta - 25) / 65; // 1 a los 25°, 0 a los 90°
+          const baseSize = radarRadius * 0.019;
+          const fadeSize = baseSize * (1 + 0.3 * fadeFactor3); // crecimiento mínimo
+          const alpha3 = 0.25 * fadeFactor3; // de 0.25 a 0 (muy gradual)
+
+          // Halo muy sutil durante fade-out prolongado
+          if (fadeFactor3 > 0.3) {
+            const haloGrad3 = ctx.createRadialGradient(
+              x,
+              y,
+              0,
+              x,
+              y,
+              fadeSize * 2.5
+            );
+            haloGrad3.addColorStop(0, `rgba(147,51,234,${alpha3 * 0.3})`);
+            haloGrad3.addColorStop(1, "rgba(147,51,234,0)");
+            ctx.fillStyle = haloGrad3;
+            ctx.beginPath();
+            ctx.arc(x, y, fadeSize * 2.5, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          // Círculo de blip en fade-out prolongado
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(147,51,234,${alpha3})`;
+          ctx.arc(x, y, fadeSize, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        // 4) Si delta ≥ 90°, blip base muy tenue
+        else {
+          const baseSize = radarRadius * 0.016;
+          ctx.beginPath();
+          ctx.fillStyle = "rgba(147,51,234,0.15)";
           ctx.arc(x, y, baseSize, 0, Math.PI * 2);
           ctx.fill();
         }
       });
       ctx.restore();
 
-      // Actualizamos sweepAngle
-      sweepAngle = (sweepAngle + 2) % 360; // Giro más rápido para visual más dinámico
+      // Incrementamos el ángulo de la manecilla (aún más lento)
+      sweepAngle = (sweepAngle + 0.8) % 360;
+
       animationRef.current = requestAnimationFrame(drawFrame);
     };
 
     // Iniciamos la animación
     drawFrame();
 
-    // Ajustamos tamaño del canvas en resize
+    // Ajuste en resize
     const handleResize = () => {
       width = canvas.parentElement?.clientWidth || 0;
       height = canvas.parentElement?.clientHeight || 0;
