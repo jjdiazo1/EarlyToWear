@@ -592,6 +592,14 @@ img, video {
   top: 3rem;
 }
 
+.bottom-24 {
+  bottom: 6rem;
+}
+
+.right-24 {
+  right: 6rem;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -1611,6 +1619,10 @@ img, video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .gap-x-1 {
@@ -4681,6 +4693,10 @@ button:disabled svg path {
     margin-top: 0;
   }
 
+  .lg\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -4817,9 +4833,18 @@ button:disabled svg path {
     gap: 1.25rem;
   }
 
+  .lg\:gap-16 {
+    gap: 4rem;
+  }
+
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   .lg\:pl-0 {
@@ -4842,6 +4867,11 @@ button:disabled svg path {
 
   .lg\:text-xl {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
@@ -4891,6 +4921,11 @@ button:disabled svg path {
 
   .xl\:text-6xl {
     font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .xl\:text-5xl {
+    font-size: 3rem;
     line-height: 1;
   }
 }
