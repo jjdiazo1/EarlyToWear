@@ -118,139 +118,181 @@ const CartPaymentSection = ({
   }, [isOpen])
 
   return (
-    <div className="border p-4 rounded-sm bg-ui-bg-interactive">
-      <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
-          className="flex flex-row text-3xl-regular gap-x-2 items-baseline items-center"
-        >
-          {!isOpen && paymentReady && <CheckCircleSolid />}
-          Payment
-        </Heading>
-        {!isOpen && (
-          <Text>
-            <Button onClick={handleEdit} variant="tonal">
-              Edit
-            </Button>
-          </Text>
-        )}
-      </div>
-      <div>
-        <div className={isOpen ? "block" : "hidden"}>
-          {!paidByGiftcard && availablePaymentMethods?.length && (
-            <>
-              <RadioGroup
-                value={selectedPaymentMethod}
-                onChange={(value: string) => setPaymentMethod(value)}
+    <div className="group relative">
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-indigo-500/5 rounded-2xl blur opacity-60"></div>
+      
+      {/* Shine effect */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-white/0 via-white/60 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full rounded-2xl"></div>
+      
+      <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
+        {/* Header */}
+        <div className="flex flex-row items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            {!isOpen && paymentReady && (
+              <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center">
+                <CheckCircleSolid className="text-white"/>
+              </div>
+            )}
+            <div className="flex items-center gap-3">
+              <div className="h-1 w-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+              <Heading
+                level="h2"
+                className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent"
               >
-                {availablePaymentMethods.map((paymentMethod) => (
-                  <div key={paymentMethod.id}>
-                    {isStripeFunc(paymentMethod.id) ? (
-                      <StripeCardContainer
-                        paymentProviderId={paymentMethod.id}
-                        selectedPaymentOptionId={selectedPaymentMethod}
-                        paymentInfoMap={paymentInfoMap}
-                        setCardBrand={setCardBrand}
-                        setError={setError}
-                        setCardComplete={setCardComplete}
-                      />
-                    ) : (
-                      <PaymentContainer
-                        paymentInfoMap={paymentInfoMap}
-                        paymentProviderId={paymentMethod.id}
-                        selectedPaymentOptionId={selectedPaymentMethod}
-                      />
-                    )}
-                  </div>
-                ))}
-              </RadioGroup>
-            </>
-          )}
-
-          {paidByGiftcard && (
-            <div className="flex flex-col w-1/3">
-              <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                Payment method
-              </Text>
-              <Text
-                className="txt-medium text-ui-fg-subtle"
-                data-testid="payment-method-summary"
+                Payment
+              </Heading>
+            </div>
+          </div>
+          
+          {!isOpen && (
+            <div className="relative group/button">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur opacity-25 group-hover/button:opacity-50 transition duration-300"></div>
+              <Button 
+                onClick={handleEdit} 
+                variant="tonal"
+                className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 hover:bg-white hover:scale-105 transition-all duration-300"
               >
-                Gift card
-              </Text>
+                Edit
+              </Button>
             </div>
           )}
-
-          <ErrorMessage
-            error={error}
-            data-testid="payment-method-error-message"
-          />
-
-          <Button
-            onClick={handleSubmit}
-            variant="tonal"
-            loading={isLoading}
-            disabled={
-              (isStripe && !cardComplete) ||
-              (!selectedPaymentMethod && !paidByGiftcard)
-            }
-          >
-            {!activeSession && isStripeFunc(selectedPaymentMethod)
-              ? " Enter card details"
-              : "Continue to review"}
-          </Button>
         </div>
 
-        <div className={isOpen ? "hidden" : "block"}>
-          {cart && paymentReady && activeSession ? (
-            <div className="flex items-start gap-x-1 w-full">
-              <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
+        <div>
+          <div className={isOpen ? "block" : "hidden"}>
+            {!paidByGiftcard && availablePaymentMethods?.length && (
+              <div className="bg-white/50 backdrop-blur-sm border border-gray-200/30 rounded-xl p-6 mb-6">
+                <RadioGroup
+                  value={selectedPaymentMethod}
+                  onChange={(value: string) => setPaymentMethod(value)}
+                >
+                  <div className="space-y-4">
+                    {availablePaymentMethods.map((paymentMethod) => (
+                      <div key={paymentMethod.id} className="relative">
+                        {isStripeFunc(paymentMethod.id) ? (
+                          <StripeCardContainer
+                            paymentProviderId={paymentMethod.id}
+                            selectedPaymentOptionId={selectedPaymentMethod}
+                            paymentInfoMap={paymentInfoMap}
+                            setCardBrand={setCardBrand}
+                            setError={setError}
+                            setCardComplete={setCardComplete}
+                          />
+                        ) : (
+                          <PaymentContainer
+                            paymentInfoMap={paymentInfoMap}
+                            paymentProviderId={paymentMethod.id}
+                            selectedPaymentOptionId={selectedPaymentMethod}
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </RadioGroup>
+              </div>
+            )}
+
+            {paidByGiftcard && (
+              <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-100/50 rounded-xl p-6 mb-6">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-6 h-6 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-white">
+                      <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <Text className="font-semibold text-emerald-800">Payment method</Text>
+                </div>
+                <Text
+                  className="text-emerald-700 ml-9"
+                  data-testid="payment-method-summary"
+                >
+                  Gift card
+                </Text>
+              </div>
+            )}
+
+            <ErrorMessage
+              error={error}
+              data-testid="payment-method-error-message"
+            />
+
+            <div className="relative group/button">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur opacity-25 group-hover/button:opacity-50 transition duration-300"></div>
+              <Button
+                onClick={handleSubmit}
+                variant="tonal"
+                loading={isLoading}
+                disabled={
+                  (isStripe && !cardComplete) ||
+                  (!selectedPaymentMethod && !paidByGiftcard)
+                }
+                className="relative w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-0"
+              >
+                {!activeSession && isStripeFunc(selectedPaymentMethod)
+                  ? "Enter card details"
+                  : "Continue to review →"}
+              </Button>
+            </div>
+          </div>
+
+          <div className={isOpen ? "hidden" : "block"}>
+            {cart && paymentReady && activeSession ? (
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100/50 rounded-xl p-6">
+                <div className="flex items-start gap-x-6 w-full">
+                  <div className="flex flex-col flex-1">
+                    <Text className="font-semibold text-purple-800 mb-1">
+                      Payment method
+                    </Text>
+                    <Text
+                      className="text-purple-700"
+                      data-testid="payment-method-summary"
+                    >
+                      {paymentInfoMap[activeSession?.provider_id]?.title ||
+                        activeSession?.provider_id}
+                    </Text>
+                  </div>
+                  <div className="flex flex-col flex-1">
+                    <Text className="font-semibold text-purple-800 mb-1">
+                      Payment details
+                    </Text>
+                    <div
+                      className="flex gap-2 text-purple-700 items-center"
+                      data-testid="payment-details-summary"
+                    >
+                      <Container className="flex items-center h-7 w-fit p-2 bg-white/70 backdrop-blur-sm border border-purple-200/50 rounded-lg">
+                        {paymentInfoMap[selectedPaymentMethod]?.icon || (
+                          <CreditCard className="text-purple-600" />
+                        )}
+                      </Container>
+                      <Text>
+                        {isStripeFunc(selectedPaymentMethod) && cardBrand
+                          ? cardBrand
+                          : "Another step will appear"}
+                      </Text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : paidByGiftcard ? (
+              <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-100/50 rounded-xl p-6">
+                <Text className="font-semibold text-emerald-800 mb-1">
                   Payment method
                 </Text>
                 <Text
-                  className="txt-medium text-ui-fg-subtle"
+                  className="text-emerald-700"
                   data-testid="payment-method-summary"
                 >
-                  {paymentInfoMap[activeSession?.provider_id]?.title ||
-                    activeSession?.provider_id}
+                  Gift card
                 </Text>
               </div>
-              <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                  Payment details
-                </Text>
-                <div
-                  className="flex gap-2 txt-medium text-ui-fg-subtle items-center"
-                  data-testid="payment-details-summary"
-                >
-                  <Container className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
-                    {paymentInfoMap[selectedPaymentMethod]?.icon || (
-                      <CreditCard />
-                    )}
-                  </Container>
-                  <Text>
-                    {isStripeFunc(selectedPaymentMethod) && cardBrand
-                      ? cardBrand
-                      : "Another step will appear"}
-                  </Text>
-                </div>
-              </div>
-            </div>
-          ) : paidByGiftcard ? (
-            <div className="flex flex-col w-1/3">
-              <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                Payment method
-              </Text>
-              <Text
-                className="txt-medium text-ui-fg-subtle"
-                data-testid="payment-method-summary"
-              >
-                Gift card
-              </Text>
-            </div>
-          ) : null}
+            ) : null}
+          </div>
         </div>
+
+        {/* Corner decorative elements */}
+        <div className="absolute -top-1 -left-1 w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-60 animate-pulse"></div>
+        <div className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-full opacity-60 animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
     </div>
   )

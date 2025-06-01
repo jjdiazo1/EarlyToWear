@@ -231,6 +231,23 @@ const __TURBOPACK__default__export__ = {
                 secondary: "rgba(var(--content-action-on-secondary))",
                 disabled: "rgba(var(--content-disabled))"
             },
+            // Z-INDEX JERARQUÍA CLARA PARA EVITAR CONFLICTOS
+            zIndex: {
+                '0': '0',
+                '10': '10',
+                '20': '20',
+                '30': '30',
+                '40': '40',
+                '50': '50',
+                'hero': '40',
+                'content': '50',
+                'header': '900',
+                'sidebar': '950',
+                'cart': '9999',
+                'dropdown': '999999',
+                'modal': '100000',
+                'tooltip': '100001'
+            },
             // Nuevas utilidades para efectos modernos
             boxShadow: {
                 'glass': 'var(--shadow-glass)',

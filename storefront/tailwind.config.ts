@@ -236,6 +236,24 @@ export default {
         disabled: "rgba(var(--content-disabled))",
       },
       
+      // Z-INDEX JERARQUÍA CLARA PARA EVITAR CONFLICTOS
+      zIndex: {
+        '0': '0',
+        '10': '10',
+        '20': '20',
+        '30': '30',
+        '40': '40',
+        '50': '50',
+        'hero': '40',          // Hero components
+        'content': '50',       // General content
+        'header': '900',       // Site header/navigation
+        'sidebar': '950',      // Sidebars
+        'cart': '9999',        // Cart sidebar
+        'dropdown': '999999',  // Cart dropdown - MÁXIMO
+        'modal': '100000',     // Modals
+        'tooltip': '100001',   // Tooltips
+      },
+      
       // Nuevas utilidades para efectos modernos
       boxShadow: {
         'glass': 'var(--shadow-glass)',

@@ -4,5 +4,6 @@
   "/[locale]/(main)/brands/page": "app/[locale]/(main)/brands/page.js",
   "/[locale]/(main)/categories/[category]/page": "app/[locale]/(main)/categories/[category]/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/[locale]/(main)/cart/page": "app/[locale]/(main)/cart/page.js"
+  "/[locale]/(main)/cart/page": "app/[locale]/(main)/cart/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }
