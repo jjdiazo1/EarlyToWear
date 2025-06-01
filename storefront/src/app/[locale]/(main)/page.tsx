@@ -50,7 +50,7 @@ export default async function Home({
       <Hero
         image="/images/hero/Image.jpg"
         heading="Snag your style in a flash"
-        paragraph="Buy, sell, and discover pre-loved gems from the trendiest brands."
+        paragraph="Buy, sell, and discover gems from local brands."
         buttons={[
           { label: "Buy now", path: "/categories" },
           {
