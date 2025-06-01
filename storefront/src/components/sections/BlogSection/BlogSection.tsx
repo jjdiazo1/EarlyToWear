@@ -180,13 +180,63 @@ export function BlogSection() {
 
           {/* Connected Cards Grid */}
           <div className="relative">
-            {/* Connection Lines Network */}
-            <div className="absolute inset-0 pointer-events-none hidden lg:block">
-              <ConnectionLine startX={200} startY={300} endX={500} endY={200} delay={0} />
-              <ConnectionLine startX={500} startY={400} endX={800} endY={300} delay={1} />
-              <ConnectionLine startX={200} startY={100} endX={800} endY={150} delay={2} />
+            {/* Connection Lines Network - RED NEURAL ELEGANTE */}
+            <div className="absolute inset-0 pointer-events-none hidden lg:block overflow-hidden">
+              {/* Red principal que conecta las cards de manera lógica */}
+              <ConnectionLine startX={220} startY={350} endX={520} endY={350} delay={0} />
+              <ConnectionLine startX={520} startY={350} endX={820} endY={350} delay={0.5} />
+              <ConnectionLine startX={320} startY={250} endX={720} endY={250} delay={1} />
               
-              {/* Data flow indicators */}
+              {/* Extensiones hacia los bordes de la pantalla */}
+              <ConnectionLine startX={0} startY={200} endX={200} endY={220} delay={0.3} />
+              <ConnectionLine startX={840} startY={220} endX={1200} endY={200} delay={2.3} />
+              <ConnectionLine startX={0} startY={400} endX={200} endY={380} delay={1.8} />
+              <ConnectionLine startX={840} startY={380} endX={1200} endY={400} delay={3.8} />
+              
+              {/* Líneas que van hacia arriba y abajo */}
+              <ConnectionLine startX={320} startY={50} endX={320} endY={220} delay={0.8} />
+              <ConnectionLine startX={520} startY={50} endX={520} endY={220} delay={1.3} />
+              <ConnectionLine startX={720} startY={50} endX={720} endY={220} delay={1.8} />
+              
+              <ConnectionLine startX={320} startY={480} endX={320} endY={650} delay={2.1} />
+              <ConnectionLine startX={520} startY={480} endX={520} endY={650} delay={2.6} />
+              <ConnectionLine startX={720} startY={480} endX={720} endY={650} delay={3.1} />
+              
+              {/* Red secundaria más amplia */}
+              <ConnectionLine startX={100} startY={150} endX={940} endY={180} delay={0.6} />
+              <ConnectionLine startX={100} startY={450} endX={940} endY={420} delay={2.2} />
+              <ConnectionLine startX={50} startY={300} endX={990} endY={300} delay={1.5} />
+              
+              {/* Conexiones diagonales elegantes */}
+              <ConnectionLine startX={150} startY={100} endX={520} endY={280} delay={1.1} />
+              <ConnectionLine startX={520} startY={420} endX={890} endY={550} delay={2.4} />
+              <ConnectionLine startX={890} startY={100} endX={520} endY={280} delay={1.7} />
+              <ConnectionLine startX={520} startY={420} endX={150} endY={550} delay={2.9} />
+              
+              {/* Branches que salen hacia las esquinas */}
+              <ConnectionLine startX={0} startY={0} endX={200} endY={150} delay={0.4} />
+              <ConnectionLine startX={840} startY={150} endX={1200} endY={0} delay={2.7} />
+              <ConnectionLine startX={0} startY={600} endX={200} endY={450} delay={3.2} />
+              <ConnectionLine startX={840} startY={450} endX={1200} endY={600} delay={3.5} />
+              
+              {/* Circuitos orbitales alrededor de cada card */}
+              <ConnectionLine startX={220} startY={200} endX={420} endY={200} delay={0.7} />
+              <ConnectionLine startX={420} startY={200} endX={420} endY={500} delay={0.9} />
+              <ConnectionLine startX={420} startY={500} endX={220} endY={500} delay={1.1} />
+              <ConnectionLine startX={220} startY={500} endX={220} endY={200} delay={1.3} />
+              
+              <ConnectionLine startX={620} startY={200} endX={820} endY={200} delay={1.4} />
+              <ConnectionLine startX={820} startY={200} endX={820} endY={500} delay={1.6} />
+              <ConnectionLine startX={820} startY={500} endX={620} endY={500} delay={1.8} />
+              <ConnectionLine startX={620} startY={500} endX={620} endY={200} delay={2.0} />
+              
+              {/* Conexiones hacia el infinito */}
+              <ConnectionLine startX={520} startY={0} endX={520} endY={100} delay={0.2} />
+              <ConnectionLine startX={520} startY={600} endX={520} endY={800} delay={3.7} />
+              <ConnectionLine startX={0} startY={300} endX={100} endY={300} delay={1.2} />
+              <ConnectionLine startX={940} startY={300} endX={1400} endY={300} delay={2.8} />
+              
+              {/* Data flow indicators distribuidos */}
               <div className="absolute top-20 left-1/2 transform -translate-x-1/2">
                 <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-gray-200/50">
                   <div className="flex gap-1">
@@ -194,8 +244,45 @@ export function BlogSection() {
                     <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
                     <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                   </div>
-                  <span className="text-sm text-gray-700 font-medium">TREND DATA FLOWING</span>
+                  <span className="text-sm text-gray-700 font-medium">NEURAL FASHION NETWORK</span>
                 </div>
+              </div>
+              
+              {/* Nodos principales del circuito - distribuidos elegantemente */}
+              <div className="absolute top-32 left-16">
+                <div className="w-4 h-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full shadow-lg animate-pulse border-2 border-white/50"></div>
+              </div>
+              <div className="absolute top-32 right-16">
+                <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-lg animate-pulse border-2 border-white/50" style={{ animationDelay: '1s' }}></div>
+              </div>
+              <div className="absolute bottom-32 left-16">
+                <div className="w-4 h-4 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-full shadow-lg animate-pulse border-2 border-white/50" style={{ animationDelay: '2s' }}></div>
+              </div>
+              <div className="absolute bottom-32 right-16">
+                <div className="w-4 h-4 bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full shadow-lg animate-pulse border-2 border-white/50" style={{ animationDelay: '1.5s' }}></div>
+              </div>
+              <div className="absolute top-1/2 left-8 transform -translate-y-1/2">
+                <div className="w-4 h-4 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full shadow-lg animate-pulse border-2 border-white/50" style={{ animationDelay: '0.5s' }}></div>
+              </div>
+              <div className="absolute top-1/2 right-8 transform -translate-y-1/2">
+                <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full shadow-lg animate-pulse border-2 border-white/50" style={{ animationDelay: '2.5s' }}></div>
+              </div>
+              
+              {/* Micro nodos en intersecciones importantes */}
+              <div className="absolute" style={{ top: '300px', left: '520px' }}>
+                <div className="w-3 h-3 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full shadow-md animate-pulse"></div>
+              </div>
+              <div className="absolute" style={{ top: '200px', left: '320px' }}>
+                <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full shadow-md animate-pulse" style={{ animationDelay: '0.7s' }}></div>
+              </div>
+              <div className="absolute" style={{ top: '200px', left: '720px' }}>
+                <div className="w-3 h-3 bg-gradient-to-r from-pink-400 to-indigo-400 rounded-full shadow-md animate-pulse" style={{ animationDelay: '1.4s' }}></div>
+              </div>
+              <div className="absolute" style={{ top: '450px', left: '320px' }}>
+                <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full shadow-md animate-pulse" style={{ animationDelay: '2.1s' }}></div>
+              </div>
+              <div className="absolute" style={{ top: '450px', left: '720px' }}>
+                <div className="w-3 h-3 bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-full shadow-md animate-pulse" style={{ animationDelay: '2.8s' }}></div>
               </div>
             </div>
             
