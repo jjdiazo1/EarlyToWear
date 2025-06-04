@@ -21,6 +21,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -28,7 +48,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "7fd1559c524fe5cd2c526bf2192ab51284e530e1af": {
@@ -52,6 +77,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -59,7 +104,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "action-browser",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "7fc387bab5b1da571c498156cecd93e246120c42fe": {
@@ -83,6 +133,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -90,7 +160,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "7f5d20d7ce47bfc9e0489eee062c6e445e9b85c45d": {
@@ -114,6 +189,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -121,7 +216,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7f8b870986fc2ba3425e23a18495a75b3c3b784c34": {
@@ -145,6 +245,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -152,7 +272,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "action-browser",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "7fb1f359112a8beef68c2239b7c7a17e897a11b6cf": {
@@ -176,6 +301,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -183,7 +328,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "action-browser",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "40f29a66e7fecaa55f04418daf00e74e1a26807e99": {
@@ -207,6 +357,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -214,7 +384,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7f4f47e91c492bd8d10c91446f7fa7386b86b4f27e": {
@@ -238,6 +413,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -245,7 +440,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "40343d475652e15bb77b200e85e928712396e157e4": {
@@ -269,6 +469,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -276,7 +496,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "4047d7f250e35763b4095c5266c279b6ded5a79b0c": {
@@ -300,6 +525,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -307,7 +552,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7f3734a14846199f910a175e23c964c7b2fda404d1": {
@@ -331,6 +581,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -338,7 +608,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "40b41a10e53d467f00c3767028d16fc0d45b30036d": {
@@ -362,6 +637,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -369,7 +664,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "407e6ea6ae6ba4c9d99bb0657abde969d5eea30d9e": {
@@ -393,6 +693,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -400,7 +720,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "60643cb7d7146f660764117092ce54fd45c46e1701": {
@@ -424,6 +749,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -431,7 +776,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7fbb35571d53608ea980e9b8e1cdf792dbf4c733e5": {
@@ -455,6 +805,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -462,7 +832,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7f7fd57c2bcdfc2b9956615956e6160171ba00fddc": {
@@ -502,6 +877,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -509,7 +904,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7f14a7ccdef050f54c633babcb886df8eac5e7c7c9": {
@@ -533,6 +933,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -540,7 +960,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "405bc0d3eb68aed6c4ed2118cd86dfb4d3160443e9": {
@@ -564,6 +989,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -571,7 +1016,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7fcf5e7af4826935e2212d3700d79a95a1d278ef87": {
@@ -595,6 +1045,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -602,7 +1072,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "action-browser",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "00ab8eb78b0b70bf6ce1f3c47f85f43cddd76dad90": {
@@ -626,6 +1101,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -633,7 +1128,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7fc3d62aced3775f94fc69fbdbb480211879147ade": {
@@ -673,6 +1173,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -680,7 +1200,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "403abac2f9949eafbadcd3de2083f4c8b45b7d64ad": {
@@ -704,6 +1229,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -711,7 +1256,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "00d2a9beeaf3ea0c8e03bbefb5c91ebc4db229771b": {
@@ -735,6 +1285,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -742,7 +1312,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "7f7f7d3f4b33eca9f7f8f967579758ce1ddb2d67e9": {
@@ -766,6 +1341,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -773,7 +1368,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "4046214a31a89da81720c63fa8761ffdfff35b21d3": {
@@ -797,6 +1397,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -804,7 +1424,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "40c01b9e426a71f9774d1a00cf70acd03f3c197173": {
@@ -828,6 +1453,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -835,7 +1480,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "603156a0d7acb0f91d49ab41605149cdfba1961c09": {
@@ -859,6 +1509,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -866,7 +1536,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7f47d20f64b79082f86c05969ea3f2c65ea297a1b9": {
@@ -890,6 +1565,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -897,7 +1592,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "action-browser",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "404f984293a8f60e4e588e26a29a413c275c495a17": {
@@ -921,6 +1621,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -928,7 +1648,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "402103384a200fec4ca2ef2f3421b390996baa1e7f": {
@@ -952,6 +1677,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -959,7 +1704,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7fee8f36f215429faddffa0f8bc9ec323f7af36cbc": {
@@ -983,6 +1733,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -990,7 +1760,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "action-browser",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "409dd3001228ea962c81f1b694b6c073200c94d647": {
@@ -1014,6 +1789,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -1021,7 +1816,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "rsc"
+        "app/[locale]/(main)/categories/page": "rsc",
+        "app/[locale]/(main)/pricing/page": "rsc",
+        "app/[locale]/(main)/about/page": "rsc",
+        "app/[locale]/(main)/guides/page": "rsc",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "rsc"
       }
     },
     "7f42af98b42bc623e20bfafe682bf4a2c6603cdf6d": {
@@ -1045,6 +1845,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -1052,7 +1872,12 @@
         "app/[locale]/(main)/brands/page": "rsc",
         "app/[locale]/(main)/sellers/[handle]/page": "rsc",
         "app/[locale]/(main)/categories/[category]/page": "rsc",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "rsc",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     },
     "7f4bb40c409e8b383fba73aa2d40b8f4fcc6d8941b": {
@@ -1076,6 +1901,26 @@
         "app/[locale]/(main)/categories/page": {
           "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/categories/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/[locale]/(main)/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/about/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/guides/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/guides/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/my-closet/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/my-closet/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/[locale]/(main)/ai-search/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/(main)/ai-search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -1083,7 +1928,12 @@
         "app/[locale]/(main)/brands/page": "action-browser",
         "app/[locale]/(main)/sellers/[handle]/page": "action-browser",
         "app/[locale]/(main)/categories/[category]/page": "action-browser",
-        "app/[locale]/(main)/categories/page": "action-browser"
+        "app/[locale]/(main)/categories/page": "action-browser",
+        "app/[locale]/(main)/pricing/page": "action-browser",
+        "app/[locale]/(main)/about/page": "action-browser",
+        "app/[locale]/(main)/guides/page": "action-browser",
+        "app/[locale]/(main)/my-closet/page": "action-browser",
+        "app/[locale]/(main)/ai-search/page": "action-browser"
       }
     }
   },

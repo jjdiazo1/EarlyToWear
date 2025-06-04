@@ -12,7 +12,7 @@ export const Navbar = ({
   return (
     <div className="flex border py-4 justify-between px-6">
       <div className="hidden md:flex items-center gap-6">
-        <CategoryNavbar categories={categories} />
+        <CategoryNavbar />
       </div>
 
       <NavbarSearch />

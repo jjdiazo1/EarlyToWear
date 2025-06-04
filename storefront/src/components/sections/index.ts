@@ -13,6 +13,9 @@ import { AlgoliaProductsListing } from "./ProductListing/AlgoliaProductsListing"
 import { AlgoliaTrendingListings } from "./HomeProductSection/AlgoliaTrendingListings"
 import { OrdersPagination } from "../organisms/OrdersPagination/OrdersPagination"
 import { BrandsListing } from "./BrandListing/BrandsListing"
+import { AIFeaturesPage } from "./AIFeaturesPage/AIFeaturesPage"
+import { GuidesPage } from "./GuidesPage/GuidesPage"
+
 
 export {
   Hero,
@@ -21,6 +24,7 @@ export {
   BannerSection,
   ShopByStyleSection,
   BlogSection,
+  AIFeaturesPage,
   ProductListing,
   SellerPageHeader,
   Cart,
@@ -30,4 +34,5 @@ export {
   AlgoliaTrendingListings,
   OrdersPagination,
   BrandsListing,
+  GuidesPage,
 }

@@ -34,10 +34,7 @@ export const MobileNavbar = ({
           </div>
           <div className='border mt-4 rounded-sm'>
             <div className='border-t pt-2'>
-              <CategoryNavbar
-                onClose={closeMenuHandler}
-                categories={childrenCategories}
-              />
+              <CategoryNavbar onClose={closeMenuHandler} />
             </div>
           </div>
         </div>
