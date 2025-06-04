@@ -40,11 +40,11 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    title: 'Minimalist Outerwear Trends',
+    title: 'Sustainable Fashion',
     excerpt:
-      'Explore the latest minimalist outerwear pieces that combine functionality with clean aesthetics.',
+      'Discover how you can shop clothes made from sustainable materials, perfect for those who value style and substance in their wardrobe.',
     image: '/images/blog/post-3.jpg',
-    category: 'TRENDS',
+    category: 'SUSTAINABILITY',
     href: '#',
   },
 ];
