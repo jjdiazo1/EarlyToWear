@@ -353,82 +353,82 @@ export function PricingPage() {
                 </div>
               </div>
 
-              {/* User Plans */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
-                {userPlans.map((plan, index) => (
-                  <div
-                    key={index}
-                    className={`group relative transform transition-all duration-500 ${
-                      isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                    } ${plan.popular ? 'lg:scale-110 z-10' : ''}`}
-                    style={{ transitionDelay: `${1000 + index * 200}ms` }}
-                    onMouseEnter={() => setHoveredPlan(plan.name)}
-                    onMouseLeave={() => setHoveredPlan(null)}
-                  >
-                    {/* Popular Badge */}
-                    {plan.popular && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                        <div className="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                          MÁS POPULAR
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Halo Effect */}
-                    <div className={`absolute -inset-4 bg-gradient-to-r ${plan.gradient} opacity-0 group-hover:opacity-10 rounded-3xl blur-xl transition-all duration-500 scale-105 -z-10`}></div>
-                    
-                    {/* Main Card */}
-                    <div className={`relative bg-white/90 backdrop-blur-md border-2 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden ${plan.popular ? 'border-rose-200' : 'border-gray-200/50'}`}>
-                      
-                      {/* Shine Effect */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-white/0 via-white/60 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full z-10"></div>
-                      
-                      {/* Content */}
-                      <div className="relative z-20">
-                        {/* Icon & Name */}
-                        <div className="text-center mb-6">
-                          <div className="text-4xl mb-3">{plan.icon}</div>
-                          <h3 className="text-2xl font-['Anton'] tracking-wider text-gray-800 mb-2">
-                            {plan.name}
-                          </h3>
-                          <p className="text-gray-600 text-sm italic">{plan.subtitle}</p>
-                        </div>
-                        
-                        {/* Price */}
-                        <div className="text-center mb-8">
-                          <div className={`text-4xl font-['Anton'] bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent mb-1`}>
-                            {plan.price}
-                          </div>
-                          {plan.price !== "Contact" && (
-                            <p className="text-gray-500 text-sm">COP/mes</p>
-                          )}
-                        </div>
-                        
-                        {/* Features */}
-                        <ul className="space-y-3 mb-8">
-                          {plan.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-start gap-3">
-                              <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${plan.gradient} mt-2 flex-shrink-0`}></div>
-                              <span className="text-gray-600 text-sm">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        
-                        {/* Ideal For */}
-                        <div className="mb-8">
-                          <p className="text-xs text-gray-500 font-semibold mb-2">IDEAL PARA:</p>
-                          <p className="text-gray-600 text-sm italic">{plan.ideal}</p>
-                        </div>
-                        
-                        {/* CTA Button */}
-                        <button className={`w-full bg-gradient-to-r ${plan.gradient} text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105`}>
-                          {plan.price === "Contact" ? "Contact" : "Try for free 7 days"}
-                        </button>
+            {/* User Plans */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
+              {userPlans.map((plan, index) => (
+                <div
+                  key={index}
+                  className={`group relative transform transition-all duration-500 h-full ${
+                    isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                  }`}
+                  style={{ transitionDelay: `${1000 + index * 200}ms` }}
+                  onMouseEnter={() => setHoveredPlan(plan.name)}
+                  onMouseLeave={() => setHoveredPlan(null)}
+                >
+                  {/* Popular Badge */}
+                  {plan.popular && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                      <div className="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                        MÁS POPULAR
                       </div>
                     </div>
+                  )}
+                  
+                  {/* Halo Effect */}
+                  <div className={`absolute -inset-4 bg-gradient-to-r ${plan.gradient} opacity-0 group-hover:opacity-10 rounded-3xl blur-xl transition-all duration-500 scale-105 -z-10`}></div>
+                  
+                  {/* Main Card */}
+                  <div className={`relative bg-white/90 backdrop-blur-md border-2 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden h-full flex flex-col ${plan.popular ? 'border-rose-200' : 'border-gray-200/50'}`}>
+                    
+                    {/* Shine Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-white/0 via-white/60 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full z-10"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-20 flex flex-col justify-between h-full">
+                      {/* Icon & Name */}
+                      <div className="text-center mb-6">
+                        <div className="text-4xl mb-3">{plan.icon}</div>
+                        <h3 className="text-2xl font-['Anton'] tracking-wider text-gray-800 mb-2">
+                          {plan.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm italic">{plan.subtitle}</p>
+                      </div>
+                      
+                      {/* Price */}
+                      <div className="text-center mb-8">
+                        <div className={`text-4xl font-['Anton'] bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent mb-1`}>
+                          {plan.price}
+                        </div>
+                        {plan.price !== "Contact" && (
+                          <p className="text-gray-500 text-sm">COP/mes</p>
+                        )}
+                      </div>
+                      
+                      {/* Features */}
+                      <ul className="space-y-3 mb-8">
+                        {plan.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start gap-3">
+                            <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${plan.gradient} mt-2 flex-shrink-0`}></div>
+                            <span className="text-gray-600 text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      {/* Ideal For */}
+                      <div className="mb-8">
+                        <p className="text-xs text-gray-500 font-semibold mb-2">IDEAL FOR:</p>
+                        <p className="text-gray-600 text-sm italic">{plan.ideal}</p>
+                      </div>
+                      
+                      {/* CTA Button */}
+                      <button className={`w-full bg-gradient-to-r ${plan.gradient} text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105`}>
+                        {plan.price === "Contact" ? "Contact" : "Try for free 7 days"}
+                      </button>
+                    </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
 
               {/* User Benefits */}
               <div className="mt-16 text-center">
