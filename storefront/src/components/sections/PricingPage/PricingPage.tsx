@@ -45,30 +45,30 @@ const competitorData = [
 
 const userPlans = [
   {
-    name: "BÁSICO",
+    name: "BASIC",
     price: "$10,000",
-    subtitle: "Perfecto para explorar",
+    subtitle: "Perfect for exploring",
     features: [
-      "Closet virtual: Hasta 20 prendas",
-      "Outfits generados: 10 por mes",
-      "Recomendaciones de compra básicas"
+      "Virtual closet: Up to 20 items",
+      "Generated outfits: 10 per month",
+      "Basic purchase recommendations"
     ],
-    ideal: "Usuarios casuales que quieren probar la experiencia",
+    ideal: "Casual users who want to try the experience",
     gradient: "from-emerald-500 to-teal-600",
     icon: "🌱"
   },
   {
     name: "PREMIUM",
     price: "$20,000",
-    subtitle: "Para los fashion lovers",
+    subtitle: "For fashion lovers",
     features: [
-      "Closet virtual: Hasta 75 prendas",
-      "Outfits generados: 50 por mes",
-      "Recomendaciones avanzadas con análisis de color",
-      "Shopping integrado automático",
-      "Análisis de estilo personal"
+      "Virtual closet: Up to 75 items",
+      "Generated outfits: 50 per month",
+      "Advanced recommendations with color analysis",
+      "Automatic shopping integration",
+      "Personal style analysis"
     ],
-    ideal: "Apasionados de la moda que quieren maximizar su guardarropa",
+    ideal: "Fashion enthusiasts who want to maximize their wardrobe",
     gradient: "from-indigo-500 to-purple-600",
     icon: "✨",
     popular: true
@@ -76,31 +76,31 @@ const userPlans = [
   {
     name: "PRO",
     price: "$100,000",
-    subtitle: "El estilista completo",
+    subtitle: "The complete stylist",
     features: [
-      "Closet virtual: Prendas ilimitadas",
-      "Outfits generados: 200 por mes",
-      "IA avanzada con análisis de tendencias",
-      "Personal stylist: 2 consultorías por mes",
-      "Early access a nuevas marcas",
-      "Custom requests para eventos"
+      "Virtual closet: Unlimited items",
+      "Generated outfits: 200 per month",
+      "Advanced AI with trend analysis",
+      "Personal stylist: 2 consultations per month",
+      "Early access to new brands",
+      "Custom requests for events"
     ],
-    ideal: "Fashionistas, influencers, profesionales de la moda",
+    ideal: "Fashionistas, influencers, fashion professionals",
     gradient: "from-purple-500 to-pink-600",
     icon: "🚀"
   },
   {
     name: "CUSTOM",
-    price: "Contactar",
-    subtitle: "Para Estilistas Profesionales",
+    price: "Contact",
+    subtitle: "For Professional Stylists",
     features: [
-      "Todo ilimitado: Closets, outfits, análisis",
-      "API access para integración",
-      "White label con tu marca",
-      "Soporte prioritario 24/7",
-      "Pricing personalizado"
+      "Everything unlimited: Closets, outfits, analysis",
+      "API access for integration",
+      "White label with your brand",
+      "Priority 24/7 support",
+      "Custom pricing"
     ],
-    ideal: "Estilistas profesionales y empresas",
+    ideal: "Professional stylists and companies",
     gradient: "from-rose-500 to-orange-600",
     icon: "💎"
   }
@@ -193,10 +193,10 @@ export function PricingPage() {
               <div className="text-center mb-16">
                 <h2 className="text-4xl lg:text-6xl font-['Anton'] tracking-wider uppercase mb-6">
                   <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                    Vende más con IA
+                    Sell More with AI
                   </span>
                 </h2>
-                <p className="text-2xl text-gray-600 mb-8">Paga menos que en otros marketplaces</p>
+                <p className="text-2xl text-gray-600 mb-8">Pay less than other marketplaces</p>
                 
                 {/* Commission Breakdown */}
                 <div className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl p-8 shadow-xl max-w-2xl mx-auto mb-12">
@@ -204,7 +204,7 @@ export function PricingPage() {
                     <div className="text-6xl font-['Anton'] bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                       6.5%
                     </div>
-                    <p className="text-gray-600 text-lg">Comisión Total</p>
+                    <p className="text-gray-600 text-lg">Total Commission</p>
                   </div>
                   
                   <div className="space-y-4">
@@ -221,7 +221,7 @@ export function PricingPage() {
               {/* Competitor Comparison */}
               <div className="mb-16">
                 <h3 className="text-3xl font-['Anton'] tracking-wider text-center mb-8 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  COMPARACIÓN VS COMPETENCIA
+                  COMPARISON VS COMPETITION
                 </h3>
                 
                 <div className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-2xl overflow-hidden shadow-xl">
@@ -230,11 +230,11 @@ export function PricingPage() {
                       <thead>
                         <tr className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
                           <th className="px-6 py-4 text-left">Marketplace</th>
-                          <th className="px-6 py-4 text-center">Comisión</th>
-                          <th className="px-6 py-4 text-center">IA Features</th>
-                          <th className="px-6 py-4 text-center">Comunidad</th>
+                          <th className="px-6 py-4 text-center">Commission</th>
+                          <th className="px-6 py-4 text-center">AI Features</th>
+                          <th className="px-6 py-4 text-center">Community</th>
                           <th className="px-6 py-4 text-center">Targeting</th>
-                          <th className="px-6 py-4 text-center">Soporte</th>
+                          <th className="px-6 py-4 text-center">Support</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -244,14 +244,14 @@ export function PricingPage() {
                             <td className="px-6 py-4 text-center font-bold">{competitor.commission}</td>
                             <td className="px-6 py-4 text-center">
                               {competitor.aiFeatures ? (
-                                <span className="text-green-600">✅ Styling AI personalizado</span>
+                                <span className="text-green-600">✅ Custom Styling AI</span>
                               ) : (
                                 <span className="text-red-500">❌</span>
                               )}
                             </td>
                             <td className="px-6 py-4 text-center">
                               {competitor.community === true ? (
-                                <span className="text-green-600">✅ Comunidad activa</span>
+                                <span className="text-green-600">✅ Active community</span>
                               ) : competitor.community === false ? (
                                 <span className="text-red-500">❌</span>
                               ) : (
@@ -260,14 +260,14 @@ export function PricingPage() {
                             </td>
                             <td className="px-6 py-4 text-center">
                               {competitor.targeting ? (
-                                <span className="text-green-600">✅ Recomendaciones IA</span>
+                                <span className="text-green-600">✅ AI Recommendations</span>
                               ) : (
                                 <span className="text-red-500">❌</span>
                               )}
                             </td>
                             <td className="px-6 py-4 text-center">
                               {competitor.support ? (
-                                <span className="text-green-600">✅ Support dedicado</span>
+                                <span className="text-green-600">✅ Dedicated support</span>
                               ) : (
                                 <span className="text-red-500">❌</span>
                               )}
@@ -283,15 +283,15 @@ export function PricingPage() {
               {/* Volume Plans */}
               <div className="text-center">
                 <h3 className="text-3xl font-['Anton'] tracking-wider mb-8 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                  PLANES POR VOLUMEN
+                  VOLUME PLANS
                 </h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {[
-                    { name: "Startup", rate: "6.5%", volume: "Estándar" },
-                    { name: "Growth", rate: "5.5%", volume: "A partir de $10M COP/mes" },
-                    { name: "Enterprise", rate: "Custom", volume: "+$50M COP/mes" },
-                    { name: "Custom", rate: "Negociable", volume: "Volúmenes altos" }
+                    { name: "Startup", rate: "6.5%", volume: "Standard" },
+                    { name: "Growth", rate: "5.5%", volume: "From $10M COP/month" },
+                    { name: "Enterprise", rate: "Custom", volume: "+$50M COP/month" },
+                    { name: "Custom", rate: "Negotiable", volume: "High volumes" }
                   ].map((plan, index) => (
                     <div key={index} className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
                       <h4 className="text-xl font-bold text-gray-800 mb-2">{plan.name}</h4>
@@ -305,7 +305,7 @@ export function PricingPage() {
                 
                 <div className="mt-12">
                   <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-4 rounded-full font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-xl text-lg">
-                    Empieza a vender en 48 horas
+                    Start selling in 48 hours
                   </button>
                 </div>
               </div>
@@ -320,33 +320,33 @@ export function PricingPage() {
               <div className="mb-16">
                 <h2 className="text-4xl lg:text-6xl font-['Anton'] tracking-wider uppercase text-center mb-6">
                   <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                    Tu estilista personal
+                    Your Personal Stylist
                   </span>
                 </h2>
-                <p className="text-2xl text-gray-600 text-center mb-8">Más barato que una consulta</p>
+                <p className="text-2xl text-gray-600 text-center mb-8">Cheaper than a consultation</p>
                 
                 <div className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-2xl overflow-hidden shadow-xl max-w-4xl mx-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="bg-gradient-to-r from-purple-500 to-pink-600 text-white">
-                        <th className="px-6 py-4 text-left">Servicio</th>
-                        <th className="px-6 py-4 text-center">Costo Mensual</th>
-                        <th className="px-6 py-4 text-center">Disponibilidad</th>
-                        <th className="px-6 py-4 text-center">Personalización</th>
+                        <th className="px-6 py-4 text-left">Service</th>
+                        <th className="px-6 py-4 text-center">Monthly Cost</th>
+                        <th className="px-6 py-4 text-center">Availability</th>
+                        <th className="px-6 py-4 text-center">Personalization</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200/50">
-                        <td className="px-6 py-4 font-semibold">Estilista profesional</td>
+                        <td className="px-6 py-4 font-semibold">Professional stylist</td>
                         <td className="px-6 py-4 text-center font-bold text-red-600">$300,000-800,000 COP</td>
-                        <td className="px-6 py-4 text-center text-yellow-600">Citas limitadas</td>
-                        <td className="px-6 py-4 text-center text-yellow-600">Personal pero costoso</td>
+                        <td className="px-6 py-4 text-center text-yellow-600">Limited appointments</td>
+                        <td className="px-6 py-4 text-center text-yellow-600">Personal but expensive</td>
                       </tr>
                       <tr className="bg-gradient-to-r from-indigo-50 to-purple-50">
-                        <td className="px-6 py-4 font-semibold">Nuestra IA Stylist</td>
-                        <td className="px-6 py-4 text-center font-bold text-green-600">Desde $10,000 COP</td>
+                        <td className="px-6 py-4 font-semibold">Our AI Stylist</td>
+                        <td className="px-6 py-4 text-center font-bold text-green-600">From $10,000 COP</td>
                         <td className="px-6 py-4 text-center text-green-600">24/7</td>
-                        <td className="px-6 py-4 text-center text-green-600">Aprende tu estilo único</td>
+                        <td className="px-6 py-4 text-center text-green-600">Learns your unique style</td>
                       </tr>
                     </tbody>
                   </table>
@@ -399,7 +399,7 @@ export function PricingPage() {
                           <div className={`text-4xl font-['Anton'] bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent mb-1`}>
                             {plan.price}
                           </div>
-                          {plan.price !== "Contactar" && (
+                          {plan.price !== "Contact" && (
                             <p className="text-gray-500 text-sm">COP/mes</p>
                           )}
                         </div>
@@ -422,7 +422,7 @@ export function PricingPage() {
                         
                         {/* CTA Button */}
                         <button className={`w-full bg-gradient-to-r ${plan.gradient} text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105`}>
-                          {plan.price === "Contactar" ? "Contactar" : "Prueba gratis 7 días"}
+                          {plan.price === "Contact" ? "Contact" : "Try for free 7 days"}
                         </button>
                       </div>
                     </div>
@@ -433,17 +433,17 @@ export function PricingPage() {
               {/* User Benefits */}
               <div className="mt-16 text-center">
                 <h3 className="text-3xl font-['Anton'] tracking-wider mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  BENEFICIOS ÚNICOS
+                  UNIQUE BENEFITS
                 </h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
-                    { icon: "🧠", title: "IA que aprende tu estilo", desc: "Cada outfit mejora las siguientes recomendaciones" },
-                    { icon: "🛍️", title: "Integración total", desc: "Lo que compras se añade automáticamente a tu closet virtual" },
-                    { icon: "📱", title: "Gestión de guardarropa", desc: "Organiza, categoriza y optimiza lo que ya tienes" },
-                    { icon: "🎯", title: "Recomendaciones inteligentes", desc: "La IA sugiere compras basadas en gaps en tu closet" },
-                    { icon: "👥", title: "Comunidad de moda", desc: "Conecta con otros amantes de la moda" },
-                    { icon: "📈", title: "Tracking de outfits", desc: "Ve qué combinaciones funcionan mejor" }
+                    { icon: "🧠", title: "AI that learns your style", desc: "Each outfit improves future recommendations" },
+                    { icon: "🛍️", title: "Full integration", desc: "What you buy is automatically added to your virtual closet" },
+                    { icon: "📱", title: "Wardrobe management", desc: "Organize, categorize and optimize what you already have" },
+                    { icon: "🎯", title: "Smart recommendations", desc: "AI suggests purchases based on gaps in your closet" },
+                    { icon: "👥", title: "Fashion community", desc: "Connect with other fashion lovers" },
+                    { icon: "📈", title: "Outfit tracking", desc: "See which combinations work best" }
                   ].map((benefit, index) => (
                     <div key={index} className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                       <div className="text-3xl mb-3">{benefit.icon}</div>
@@ -461,17 +461,17 @@ export function PricingPage() {
             <div className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl p-12 shadow-xl max-w-4xl mx-auto">
               <h2 className="text-4xl font-['Anton'] tracking-wider uppercase mb-6">
                 <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                  ¿Tienes Preguntas?
+                  Have Questions?
                 </span>
               </h2>
               
               <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-                Nuestro equipo está aquí para ayudarte a elegir el plan perfecto para tus necesidades.
+                Our team is here to help you choose the perfect plan for your needs.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <button className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                  Contactar Equipo
+                  Contact Team
                 </button>
                 
                 <a 

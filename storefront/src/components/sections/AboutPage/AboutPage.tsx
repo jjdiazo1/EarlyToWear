@@ -5,26 +5,26 @@ import { useState, useEffect } from 'react'
 const values = [
   {
     icon: "🤖",
-    title: "IA que Empodera",
-    description: "Creemos que la inteligencia artificial debe trabajar para nosotros, no reemplazarnos. Nuestra IA genera nuevas oportunidades económicas y empodera tanto a marcas como a usuarios.",
+    title: "AI Empowerment",
+    description: "We believe artificial intelligence should work for us, not replace us. Our AI generates new economic opportunities and empowers both brands and users.",
     gradient: "from-indigo-500 to-purple-600"
   },
   {
     icon: "🌱",
-    title: "Moda Sostenible",
-    description: "Combatimos la moda rápida promoviendo el consumo consciente. Cada recomendación de nuestra IA está diseñada para maximizar el valor de lo que ya tienes.",
+    title: "Sustainable Fashion",
+    description: "We combat fast fashion by promoting conscious consumption. Each AI recommendation is designed to maximize the value of what you already own.",
     gradient: "from-emerald-500 to-teal-600"
   },
   {
     icon: "💡",
-    title: "Innovación Accesible",
-    description: "Democratizamos la tecnología fashion. Desde pequeñas marcas hasta grandes usuarios, todos merecen acceso a herramientas de styling inteligente.",
+    title: "Accessible Innovation",
+    description: "We democratize fashion technology. From small brands to large users, everyone deserves access to intelligent styling tools.",
     gradient: "from-orange-500 to-pink-600"
   },
   {
     icon: "🤝",
-    title: "Comunidad Colaborativa",
-    description: "Construimos un ecosistema donde marcas y usuarios se benefician mutuamente. La IA conecta necesidades reales con productos perfectos.",
+    title: "Collaborative Community",
+    description: "We build an ecosystem where brands and users mutually benefit. AI connects real needs with perfect products.",
     gradient: "from-purple-500 to-rose-600"
   }
 ]
@@ -32,26 +32,26 @@ const values = [
 const milestones = [
   {
     year: "2024",
-    title: "La Visión Nace",
-    description: "Fundamos Early To Wear con la misión de unir fashion y technology de manera revolucionaria.",
+    title: "The Vision Begins",
+    description: "We founded Early To Wear with the mission to unite fashion and technology in a revolutionary way.",
     icon: "💡"
   },
   {
     year: "2025",
     title: "Marketplace Launch",
-    description: "Lanzamos nuestra plataforma conectando marcas con usuarios a través de recomendaciones AI.",
+    description: "We launched our platform connecting brands with users through AI recommendations.",
     icon: "🚀"
   },
   {
     year: "2025+",
     title: "AI Features",
-    description: "Desarrollamos herramientas de IA avanzadas: visual search, closet management y style DNA analysis.",
+    description: "We developed advanced AI tools: visual search, closet management, and style DNA analysis.",
     icon: "🤖"
   },
   {
-    year: "Futuro",
+    year: "Future",
     title: "Fashion Revolution",
-    description: "Nos convertimos en el primer marketplace 100% AI-powered, transformando el consumo de moda global.",
+    description: "We become the first 100% AI-powered marketplace, transforming global fashion consumption.",
     icon: "🌟"
   }
 ]
@@ -109,9 +109,9 @@ export function AboutPage() {
             </h1>
             
             <p className={`text-gray-600 text-xl max-w-4xl mx-auto leading-relaxed transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
-              Fundamos Early To Wear con un sueño: unir la pasión por la moda con el poder transformador de la tecnología. 
-              Creemos que la IA debe trabajar para nosotros, generando nuevas oportunidades económicas sin quitar empleos, 
-              sino creando un ecosistema donde la tecnología eleva la experiencia humana.
+              We founded Early To Wear with a dream: to unite the passion for fashion with the transformative power of technology. 
+              We believe AI should work for us, generating new economic opportunities without taking away jobs, 
+              but creating an ecosystem where technology elevates the human experience.
             </p>
           </div>
 
@@ -122,27 +122,26 @@ export function AboutPage() {
                 <div>
                   <h2 className="text-4xl font-['Anton'] tracking-wider uppercase mb-6">
                     <span className="bg-gradient-to-r from-rose-600 to-purple-600 bg-clip-text text-transparent">
-                      La Visión
+                      The Vision
                     </span>
                   </h2>
                   
                   <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                     <p>
-                      <strong className="text-gray-800">¿Por qué Early To Wear?</strong> Porque amamos la moda y la tecnología por igual. 
-                      Vimos una oportunidad única de crear algo que nunca había existido: un marketplace que entiende tu estilo personal 
-                      y te conecta con las piezas perfectas.
+                      <strong className="text-gray-800">Why Early To Wear?</strong> Because we love fashion and technology equally. 
+                      We saw a unique opportunity to create something that had never existed: a marketplace that understands your personal style 
+                      and connects you with the perfect pieces.
                     </p>
                     
                     <p>
-                      Nuestra misión va más allá de vender ropa. Queremos <strong className="text-rose-600">transformar la forma en que 
-                      consumimos moda</strong>, acabar con la moda rápida, y crear un futuro donde cada compra sea consciente, 
-                      personalizada y valiosa.
+                      Our mission goes beyond selling clothes. We want to <strong className="text-rose-600">transform the way we consume fashion</strong>, 
+                      end fast fashion, and create a future where every purchase is conscious, personalized, and valuable.
                     </p>
                     
                     <p>
-                      La IA no está aquí para reemplazar la creatividad humana, sino para <strong className="text-purple-600">amplificarla</strong>. 
-                      Cada algoritmo, cada recomendación, cada conexión que hacemos está diseñada para empoderar tanto a las marcas 
-                      como a los usuarios, generando valor real para todos.
+                      AI is not here to replace human creativity, but to <strong className="text-purple-600">amplify it</strong>. 
+                      Every algorithm, every recommendation, every connection we make is designed to empower both brands 
+                      and users, generating real value for everyone.
                     </p>
                   </div>
                 </div>
@@ -151,11 +150,15 @@ export function AboutPage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-rose-500/20 to-purple-500/20 rounded-3xl blur-xl"></div>
                   <div className="relative bg-gradient-to-br from-rose-100 to-purple-100 rounded-3xl p-8 shadow-lg">
                     <div className="text-center">
-                      <div className="text-6xl mb-4" style={{ animation: 'pulse-heart 3s ease-in-out infinite' }}>💝</div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4">Fundado con Amor</h3>
+                      <div className="text-6xl mb-4" style={{ animation: 'pulse-heart 3s ease-in-out infinite' }}>
+                        <svg className="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-800 mb-4">Founded with Love</h3>
                       <p className="text-gray-600">
-                        Por la intersección entre fashion & technology, por la innovación que empodera, 
-                        y por un futuro más consciente y personalizado.
+                        For the intersection between fashion & technology, for empowering innovation, 
+                        and for a more conscious and personalized future.
                       </p>
                     </div>
                   </div>
@@ -169,11 +172,11 @@ export function AboutPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-6xl font-['Anton'] tracking-wider uppercase mb-6">
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Nuestros Valores
+                  Our Values
                 </span>
               </h2>
               <p className="text-gray-600 text-xl max-w-3xl mx-auto">
-                Los principios que guían cada decisión y cada línea de código que escribimos.
+                The principles that guide every decision and every line of code we write.
               </p>
             </div>
             
@@ -219,11 +222,11 @@ export function AboutPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-6xl font-['Anton'] tracking-wider uppercase mb-6">
                 <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                  Nuestro Camino
+                  Our Journey
                 </span>
               </h2>
               <p className="text-gray-600 text-xl max-w-3xl mx-auto">
-                Desde la idea inicial hasta la revolución de la moda con IA.
+                From the initial idea to the AI fashion revolution.
               </p>
             </div>
             
@@ -265,30 +268,29 @@ export function AboutPage() {
           <div className={`mb-20 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`} style={{ transitionDelay: '1200ms' }}>
             <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-12 text-white text-center shadow-2xl">
               <h2 className="text-4xl lg:text-6xl font-['Anton'] tracking-wider uppercase mb-8">
-                Nuestra Misión
+                Our Mission
               </h2>
               
               <p className="text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
-                "Ser el primer marketplace 100% potenciado por IA que transforme la forma en que el mundo 
-                consume moda, promoviendo la sostenibilidad, la personalización y la expresión auténtica 
-                del estilo personal."
+                "To be the first 100% AI-powered marketplace that transforms how the world consumes fashion, 
+                promoting sustainability, personalization, and authentic expression of personal style."
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
                   <div className="text-4xl mb-4">🌍</div>
                   <h3 className="text-xl font-bold mb-2">Global Impact</h3>
-                  <p className="text-indigo-100">Transformar el consumo de moda a nivel mundial</p>
+                  <p className="text-indigo-100">Transform global fashion consumption</p>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl mb-4">🎯</div>
-                  <h3 className="text-xl font-bold mb-2">Personalización Total</h3>
-                  <p className="text-indigo-100">Cada usuario tiene su experiencia única</p>
+                  <h3 className="text-xl font-bold mb-2">Total Personalization</h3>
+                  <p className="text-indigo-100">Each user has their unique experience</p>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl mb-4">♻️</div>
-                  <h3 className="text-xl font-bold mb-2">Sostenibilidad</h3>
-                  <p className="text-indigo-100">Acabar con la moda rápida para siempre</p>
+                  <h3 className="text-xl font-bold mb-2">Sustainability</h3>
+                  <p className="text-indigo-100">End fast fashion forever</p>
                 </div>
               </div>
             </div>
@@ -299,30 +301,30 @@ export function AboutPage() {
             <div className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl p-12 shadow-xl max-w-5xl mx-auto">
               <h2 className="text-4xl lg:text-6xl font-['Anton'] tracking-wider uppercase mb-8">
                 <span className="bg-gradient-to-r from-rose-600 to-purple-600 bg-clip-text text-transparent">
-                  Únete a la Revolución
+                  Join the Revolution
                 </span>
               </h2>
               
               <p className="text-gray-600 text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-                Estamos construyendo el futuro de la moda y la tecnología. Si compartes nuestra visión 
-                y quieres ser parte de esta revolución, te invitamos a colaborar con nosotros.
+                We're building the future of fashion and technology. If you share our vision 
+                and want to be part of this revolution, we invite you to collaborate with us.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-6 border border-rose-200/50">
                   <div className="text-3xl mb-4">🚀</div>
-                  <h3 className="font-bold text-gray-800 mb-2">Marcas</h3>
-                  <p className="text-gray-600 text-sm">Sé parte del primer marketplace AI-powered</p>
+                  <h3 className="font-bold text-gray-800 mb-2">Brands</h3>
+                  <p className="text-gray-600 text-sm">Be part of the first AI-powered marketplace</p>
                 </div>
                 <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 border border-indigo-200/50">
                   <div className="text-3xl mb-4">💻</div>
-                  <h3 className="font-bold text-gray-800 mb-2">Desarrolladores</h3>
-                  <p className="text-gray-600 text-sm">Construye el futuro de fashion tech</p>
+                  <h3 className="font-bold text-gray-800 mb-2">Developers</h3>
+                  <p className="text-gray-600 text-sm">Build the future of fashion tech</p>
                 </div>
                 <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-200/50">
                   <div className="text-3xl mb-4">🎨</div>
-                  <h3 className="font-bold text-gray-800 mb-2">Creativos</h3>
-                  <p className="text-gray-600 text-sm">Ayuda a definir la experiencia del usuario</p>
+                  <h3 className="font-bold text-gray-800 mb-2">Creatives</h3>
+                  <p className="text-gray-600 text-sm">Help define the user experience</p>
                 </div>
               </div>
               
@@ -331,7 +333,7 @@ export function AboutPage() {
                   href="mailto:earlytowear@gmail.com"
                   className="bg-gradient-to-r from-rose-600 to-purple-600 text-white px-12 py-4 rounded-full font-semibold hover:from-rose-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-xl"
                 >
-                  Colabora con Nosotros
+                  Collaborate with Us
                 </a>
                 
                 <div className="flex items-center gap-2 text-gray-600">
@@ -343,7 +345,7 @@ export function AboutPage() {
               </div>
               
               <p className="text-sm text-gray-500 mt-6">
-                Juntos podemos crear el futuro de la moda consciente y personalizada.
+                Together we can create the future of conscious and personalized fashion.
               </p>
             </div>
           </div>
