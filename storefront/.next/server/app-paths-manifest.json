@@ -5,5 +5,9 @@
   "/[locale]/(main)/sellers/[handle]/page": "app/[locale]/(main)/sellers/[handle]/page.js",
   "/[locale]/(main)/ai-search/page": "app/[locale]/(main)/ai-search/page.js",
   "/[locale]/(main)/sellers/page": "app/[locale]/(main)/sellers/page.js",
-  "/[locale]/(main)/categories/page": "app/[locale]/(main)/categories/page.js"
+  "/[locale]/(main)/categories/page": "app/[locale]/(main)/categories/page.js",
+  "/[locale]/(main)/my-closet/page": "app/[locale]/(main)/my-closet/page.js",
+  "/[locale]/(main)/guides/page": "app/[locale]/(main)/guides/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/[locale]/(main)/products/[handle]/page": "app/[locale]/(main)/products/[handle]/page.js"
 }
