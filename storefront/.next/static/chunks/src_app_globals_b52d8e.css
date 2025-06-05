@@ -1444,6 +1444,10 @@ img, video {
   flex-grow: 1;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .origin-left {
   transform-origin: 0;
 }
@@ -2001,6 +2005,10 @@ img, video {
   border-top-width: 0;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-none {
   border-style: none;
 }
@@ -2132,6 +2140,10 @@ img, video {
 
 .border-white\/50 {
   border-color: #ffffff80;
+}
+
+.border-indigo-600 {
+  border-color: rgba(var(--indigo-600), 1);
 }
 
 .border-b-transparent {

@@ -14,15 +14,18 @@ const RadarOverlay = dynamic(
 );
 
 export const BannerSection = () => {
-  // Coordenadas por defecto (Bogotá)
-  const BOGOTA_LAT = 4.7110;
-  const BOGOTA_LNG = -74.0721;
+  // Coordenadas por defecto (Chapinero, Bogotá)
+  const CHAPINERO_LAT = 4.6533;
+  const CHAPINERO_LNG = -74.0630;
 
-  // Estado para latitud/longitud (inicial = Bogotá)
+  // Estado para latitud/longitud (inicial = Chapinero)
   const [coords, setCoords] = useState<{ lat: number; lng: number }>({
-    lat: BOGOTA_LAT,
-    lng: BOGOTA_LNG,
+    lat: CHAPINERO_LAT,
+    lng: CHAPINERO_LNG,
   });
+
+  // Estado para saber si ya se obtuvo la geolocalización
+  const [locationLoaded, setLocationLoaded] = useState(false);
 
   // Al montar, intentamos obtener geolocalización del usuario
   useEffect(() => {
@@ -33,17 +36,28 @@ export const BannerSection = () => {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           });
+          setLocationLoaded(true);
         },
-        () => {
-          // Si deniega o hay error, dejamos Bogotá
-          setCoords({ lat: BOGOTA_LAT, lng: BOGOTA_LNG });
+        (error) => {
+          console.log("Geolocation error:", error.message);
+          // Si deniega o hay error, dejamos Chapinero
+          setCoords({ lat: CHAPINERO_LAT, lng: CHAPINERO_LNG });
+          setLocationLoaded(true);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 300000 // 5 minutos
         }
       );
+    } else {
+      // Si no hay geolocalización disponible, usar Chapinero
+      setLocationLoaded(true);
     }
   }, []);
 
   // URL para el iframe de Google Maps
-  const mapSrc = `https://maps.google.com/maps?q=${coords.lat},${coords.lng}&z=13&output=embed`;
+  const mapSrc = `https://maps.google.com/maps?q=${coords.lat},${coords.lng}&z=15&output=embed`;
 
   return (
     <section className="relative bg-primary text-primary overflow-hidden py-12 lg:py-24">
@@ -119,6 +133,16 @@ export const BannerSection = () => {
               {/* Halo sobre el mapa al hacer hover */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10" />
 
+              {/* Loading state */}
+              {!locationLoaded && (
+                <div className="absolute inset-0 bg-gray-100 rounded-2xl flex items-center justify-center z-10">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600 mx-auto mb-2"></div>
+                    <p className="text-sm text-gray-600">Cargando mapa...</p>
+                  </div>
+                </div>
+              )}
+
               {/* Google Maps iframe */}
               <iframe
                 src={mapSrc}
@@ -127,8 +151,10 @@ export const BannerSection = () => {
                 loading="lazy"
               />
 
-              {/* Overlay del Radar */}
-              <RadarOverlay />
+              {/* Overlay del Radar - solo se muestra cuando las coordenadas están listas */}
+              {locationLoaded && (
+                <RadarOverlay />
+              )}
             </div>
           </div>
         </div>

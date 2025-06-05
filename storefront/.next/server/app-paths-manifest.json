@@ -5,5 +5,8 @@
   "/[locale]/(main)/pricing/page": "app/[locale]/(main)/pricing/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/[locale]/(main)/my-closet/page": "app/[locale]/(main)/my-closet/page.js",
-  "/[locale]/(main)/ai-search/page": "app/[locale]/(main)/ai-search/page.js"
+  "/[locale]/(main)/ai-search/page": "app/[locale]/(main)/ai-search/page.js",
+  "/[locale]/(main)/brands/page": "app/[locale]/(main)/brands/page.js",
+  "/[locale]/(main)/categories/page": "app/[locale]/(main)/categories/page.js",
+  "/[locale]/(main)/about/page": "app/[locale]/(main)/about/page.js"
 }
