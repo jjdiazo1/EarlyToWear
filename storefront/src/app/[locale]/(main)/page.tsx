@@ -9,7 +9,7 @@ import {
   ShopByStyleSection,
 } from "@/components/sections"
 import { BrandsCarousel } from "@/components/sections/BrandsCarousel/BrandsCarousel"
-import { getFeaturedBrands } from "@/lib/data/brands"
+import { getFeaturedSellers } from "@/lib/data/seller"
 
 import type { Metadata } from "next"
 
@@ -43,7 +43,7 @@ export default async function Home({
   const { locale } = await params
   
   // Fetch featured brands
-  const featuredBrands = await getFeaturedBrands(8)
+  const featuredBrands = await getFeaturedSellers(8)
 
   return (
     <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start text-primary">

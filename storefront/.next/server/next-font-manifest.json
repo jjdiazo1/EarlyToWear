@@ -5,42 +5,7 @@
       "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
       "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
     ],
-    "[project]/src/app/[locale]/(main)/guides/page": [
-      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
-      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
-      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
-    ],
-    "[project]/src/app/_not-found/page": [
-      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
-      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
-      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
-    ],
-    "[project]/src/app/[locale]/(main)/pricing/page": [
-      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
-      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
-      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
-    ],
-    "[project]/src/app/[locale]/(main)/my-closet/page": [
-      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
-      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
-      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
-    ],
-    "[project]/src/app/[locale]/(main)/ai-search/page": [
-      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
-      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
-      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
-    ],
     "[project]/src/app/[locale]/(main)/brands/page": [
-      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
-      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
-      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
-    ],
-    "[project]/src/app/[locale]/(main)/categories/page": [
-      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
-      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
-      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
-    ],
-    "[project]/src/app/[locale]/(main)/about/page": [
       "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
       "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
       "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
@@ -50,7 +15,17 @@
       "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
       "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
     ],
-    "[project]/src/app/[locale]/(main)/sellers/[handle]/reviews/page": [
+    "[project]/src/app/[locale]/(main)/ai-search/page": [
+      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
+      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
+      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
+    ],
+    "[project]/src/app/[locale]/(main)/sellers/page": [
+      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
+      "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
+      "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"
+    ],
+    "[project]/src/app/[locale]/(main)/categories/page": [
       "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
       "static/media/1Ptgg87LROyAm3Kz_C8CSKlv-s.p.f1550be6.woff2",
       "static/media/B50WF7FGv37QNVWgE0ga__4Pbb6dDYs0gnHA-s.p.7fc4b009.woff2"

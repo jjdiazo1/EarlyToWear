@@ -1,6 +1,6 @@
 // storefront/src/app/[locale]/(main)/brands/page.tsx
 import { BrandsListing } from "@/components/sections/BrandListing/BrandsListing"
-import { listBrands } from "@/lib/data/brands"
+import { listSellers } from "@/lib/data/seller"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -15,11 +15,11 @@ interface BrandsPageProps {
   }>
 }
 
-export default async function BrandsPage({ searchParams }: BrandsPageProps) {
+export default async function SellersPage({ searchParams }: BrandsPageProps) {
   const { search = "" } = await searchParams
   
   // Fetch all brands
-  const brands = await listBrands(100) // Get first 100 brands
+  const brands = await listSellers(100) // Get first 100 brands
   
   return (
     <main className="container">

@@ -82,7 +82,7 @@ export const CategoryNavbar = ({
   const pathname = usePathname()
 
   const isAllProductsActive = pathname === '/categories' || pathname.startsWith('/categories/')
-  const isAllBrandsActive = pathname === '/brands' || pathname.startsWith('/brands/')
+  const isAllBrandsActive = pathname === '/sellers' || pathname.startsWith('/sellers/')
   const isHomeActive = pathname === '/'
 
   return (
@@ -176,7 +176,7 @@ export const CategoryNavbar = ({
 
         {/* All Brands Link */}
         <Link
-          href="/brands"
+          href="/sellers"
           onClick={() => (onClose ? onClose(false) : null)}
           className={cn(
             "px-4 py-2 rounded-lg label-md uppercase font-medium",
