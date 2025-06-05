@@ -11,7 +11,6 @@ import { Header } from "./Header/Header"
 import { Footer } from "./Footer/Footer"
 import { GalleryCarousel } from "./GalleryCarousel/GalleryCarousel"
 import { SellerHeading } from "./SellerHeading/SellerHeading"
-import { SellerFooter } from "./SellerFooter/SellerFooter"
 import { SellerTabs } from "./SellerTabs/SellerTabs"
 import { SellersCard } from "./SellersCard/SellersCard"
 import { CartSummary } from "./CartSummary/CartSummary"
@@ -40,7 +39,6 @@ export {
   Footer,
   GalleryCarousel,
   SellerHeading,
-  SellerFooter,
   SellerTabs,
   CartSummary,
   CartItems,

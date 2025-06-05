@@ -1,4 +1,4 @@
-import { SellerFooter, SellerHeading } from "@/components/organisms"
+import { SellerHeading } from "@/components/organisms"
 import { HttpTypes } from "@medusajs/types"
 
 export const SellerPageHeader = ({
@@ -11,15 +11,8 @@ export const SellerPageHeader = ({
   user: HttpTypes.StoreCustomer | null
 }) => {
   return (
-    <div className="border rounded-sm p-4">
+    <div>
       <SellerHeading header seller={seller} user={user} />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: seller.description,
-        }}
-        className="label-md my-5"
-      />
-      <SellerFooter seller={seller} />
     </div>
   )
 }

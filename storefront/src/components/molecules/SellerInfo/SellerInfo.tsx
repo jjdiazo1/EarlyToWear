@@ -24,13 +24,9 @@ export const SellerInfo = ({
       : 0
 
   return (
-    <div className="flex gap-4 w-full">
-      <div className="relative h-12 w-12 overflow-hidden rounded-sm">
-        <SellerAvatar photo={photo} size={56} alt={name} />
-      </div>
-      <div className="w-[90%]">
-        <h3 className="heading-sm text-primary">{name}</h3>
-        <div className="flex items-center gap-2 border-b pb-4">
+    <div className="flex justify-center w-full">
+      <div className="w-full text-center">
+        <div className="flex items-center justify-center gap-2 border-b pb-4">
           <StarRating starSize={16} rate={rating || 0} />
           <span className="text-md text-secondary">{reviewCount} reviews</span>
         </div>

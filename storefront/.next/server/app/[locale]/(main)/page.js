@@ -12,7 +12,7 @@ runtime.loadChunk("server/chunks/ssr/node_modules_next-intl_dist_ff9e5c._.js");
 runtime.loadChunk("server/chunks/ssr/node_modules_490daf._.js");
 runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_client_components_unauthorized-error_d758e6.js");
 runtime.loadChunk("server/chunks/ssr/src_app_global-error_tsx_55201b._.js");
-runtime.loadChunk("server/chunks/ssr/[root of the server]__330cd6._.js");
+runtime.loadChunk("server/chunks/ssr/[root of the server]__ef2a35._.js");
 runtime.loadChunk("server/chunks/ssr/node_modules_d6e7e6._.js");
 runtime.loadChunk("server/chunks/ssr/_70a1cb._.js");
 runtime.getOrInstantiateRuntimeModule("[project]/.next-internal/server/app/[locale]/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/data/regions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/data/customer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/data/wishlist.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/lib/data/products.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/lib/data/reviews.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/lib/data/cart.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/lib/data/brands.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH);
