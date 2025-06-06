@@ -9,21 +9,130 @@ import { HttpTypes } from "@medusajs/types";
 import { useEffect, useRef, useState } from "react";
 import { PortalDropdown } from "@/components/molecules";
 import { useRouter } from "next/navigation";
+import { retrieveCart } from "@/lib/data/cart";
 
 const getItemCount = (cart: HttpTypes.StoreCart | null) => {
   return cart?.items?.reduce((acc, item) => acc + item.quantity, 0) || 0;
 };
 
-export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
+// 🔧 HELPER: Calculate item price manually since calculated_price might not work
+const getItemPrice = (item: any) => {
+  console.log('🔍 Getting price for item:', {
+    id: item.id,
+    title: item.title,
+    unit_price: item.unit_price,
+    subtotal: item.subtotal,
+    total: item.total,
+    variant_prices: item.variant?.prices,
+    has_variant: !!item.variant
+  });
+
+  // Try multiple sources for price
+  if (item.unit_price && item.unit_price > 0) {
+    console.log('✅ Using unit_price:', item.unit_price);
+    return item.unit_price;
+  }
+
+  if (item.subtotal && item.subtotal > 0) {
+    console.log('✅ Using subtotal:', item.subtotal);
+    return item.subtotal;
+  }
+
+  if (item.total && item.total > 0) {
+    console.log('✅ Using total:', item.total);
+    return item.total;
+  }
+
+  // Try to find COP price in variant prices
+  const variant = item.variant;
+  if (variant?.prices) {
+    const copPrice = variant.prices.find((p: any) => 
+      p.currency_code?.toLowerCase() === 'cop'
+    );
+    if (copPrice) {
+      console.log('✅ Using variant COP price:', copPrice.amount);
+      return copPrice.amount;
+    }
+  }
+  
+  console.log('❌ No price found, using 0');
+  return 0;
+};
+
+export const CartDropdown = ({ initialCart }: { initialCart?: HttpTypes.StoreCart | null }) => {
   const [open, setOpen] = useState(false);
+  const [cart, setCart] = useState<HttpTypes.StoreCart | null>(initialCart || null);
   const containerRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const router = useRouter();
 
+  // 🔄 Auto-refresh cart every few seconds and when dropdown opens
+  const refreshCart = async () => {
+    try {
+      console.log('🔄 Refreshing cart...');
+      const freshCart = await retrieveCart();
+      console.log('🛒 Fresh cart loaded:', {
+        id: freshCart?.id,
+        itemsCount: freshCart?.items?.length || 0,
+        currency: freshCart?.currency_code,
+        items: freshCart?.items?.map(item => ({
+          id: item.id,
+          title: item.title || item.product_title,
+          quantity: item.quantity,
+          price: getItemPrice(item)
+        }))
+      });
+      setCart(freshCart);
+    } catch (error) {
+      console.error('❌ Failed to refresh cart:', error);
+    }
+  };
+
+  // Refresh cart when component mounts and every 5 seconds
+  useEffect(() => {
+    refreshCart();
+    
+    const interval = setInterval(() => {
+      refreshCart();
+    }, 5000); // Refresh every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Also refresh when dropdown opens
+  useEffect(() => {
+    if (open) {
+      refreshCart();
+    }
+  }, [open]);
+
   const cartItemsCount = getItemCount(cart);
+  
+  // 🔧 MANUAL total calculation to avoid currency_code errors
+  const calculateTotal = () => {
+    if (!cart?.items || cart.items.length === 0) return 0;
+    
+    return cart.items.reduce((total, item) => {
+      const itemPrice = getItemPrice(item);
+      return total + (itemPrice * item.quantity);
+    }, 0);
+  };
+
+  const totalAmount = calculateTotal();
   const total = convertToLocale({
-    amount: cart?.item_total || 0,
-    currency_code: cart?.currency_code || "eur",
+    amount: totalAmount,
+    currency_code: cart?.currency_code || "cop",
+  });
+
+  // 🔍 DEBUG: Ver qué cart tenemos
+  console.log('🛒 CartDropdown state:', {
+    cartExists: !!cart,
+    cartId: cart?.id,
+    itemsLength: cart?.items?.length,
+    cartItemsCount,
+    totalAmount,
+    currency: cart?.currency_code,
+    open
   });
 
   // Función para abrir con delay
@@ -42,33 +151,23 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
     }, 150);
   };
 
-  // Navegación al carrito (RESTAURADA - la que funcionaba)
+  // Navegación al carrito
   const goToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     console.log("🛒 GO TO CART CLICKED!");
-    console.log("🛒 Closing dropdown...");
     setOpen(false);
     
-    // Navegación múltiple para asegurar que funcione
-    console.log("🛒 Attempting navigation...");
-    
-    // Método 1: useRouter
     try {
       router.push("/cart");
       console.log("✅ router.push called");
     } catch (error) {
       console.error("❌ router.push failed:", error);
-    }
-    
-    // Método 2: window.location como backup
-    setTimeout(() => {
-      console.log("🛒 Backup navigation with window.location");
       window.location.href = "/cart";
-    }, 100);
+    }
   };
 
-  // Navegación a categorías (RESTAURADA - la que funcionaba)
+  // Navegación a categorías
   const goToCategories = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -77,7 +176,6 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
     
     try {
       router.push("/categories");
-      console.log("✅ router.push to categories called");
     } catch (error) {
       console.error("❌ router.push to categories failed:", error);
       window.location.href = "/categories";
@@ -93,9 +191,7 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
     };
   }, []);
 
-  /**
-   * Cerrar el dropdown al hacer clic fuera del contenedor
-   */
+  // Cerrar el dropdown al hacer clic fuera del contenedor
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -186,16 +282,12 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
                   </span>
                 </div>
                 
-                {/* Botón EXACTO que funcionaba antes */}
                 <button
                   type="button"
                   onClick={goToCart}
-                  onMouseDown={(e) => e.stopPropagation()}
-                  onMouseUp={(e) => e.stopPropagation()}
                   className="w-full py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 
                              hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl 
                              transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer"
-                  style={{ pointerEvents: 'auto', zIndex: 9999999 }}
                 >
                   <span>Go to cart</span>
                   <svg
@@ -242,15 +334,11 @@ export const CartDropdown = ({ cart }: { cart: HttpTypes.StoreCart | null }) => 
                 Agrega artículos para comenzar
               </p>
               
-              {/* Botón EXACTO que funcionaba antes */}
               <button
                 onClick={goToCategories}
-                onMouseDown={(e) => e.stopPropagation()}
-                onMouseUp={(e) => e.stopPropagation()}
                 className="w-full py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 
                            hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl 
                            transition-all duration-300 cursor-pointer"
-                style={{ pointerEvents: 'auto', zIndex: 9999999 }}
               >
                 Explorar productos
               </button>

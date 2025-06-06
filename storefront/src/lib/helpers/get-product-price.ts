@@ -1,80 +1,134 @@
 import { HttpTypes } from "@medusajs/types"
-import { getPercentageDiff } from "./get-precentage-diff"
 import { convertToLocale } from "./money"
-import { BaseHit, Hit } from "instantsearch.js"
 
+// 🔧 HELPER: Get prices from variant without relying on calculated_price
 export const getPricesForVariant = (variant: any) => {
-  if (!variant?.calculated_price?.calculated_amount) {
-    return null
+  console.log('🔍 getPricesForVariant called with:', {
+    id: variant.id,
+    calculated_price: variant.calculated_price,
+    prices: variant.prices,
+    calculated_price_type: typeof variant.calculated_price,
+    calculated_price_keys: variant.calculated_price ? Object.keys(variant.calculated_price) : []
+  });
+
+  // Try calculated_price first if available
+  if (variant.calculated_price && variant.calculated_price.calculated_amount) {
+    console.log('✅ Using calculated_price structure')
+    return {
+      calculated_price_number: variant.calculated_price.calculated_amount,
+      original_price_number: variant.calculated_price.original_amount || variant.calculated_price.calculated_amount,
+      currency_code: variant.calculated_price.currency_code || 'cop',
+      calculated_price: convertToLocale({
+        amount: variant.calculated_price.calculated_amount,
+        currency_code: variant.calculated_price.currency_code || 'cop'
+      }),
+      original_price: convertToLocale({
+        amount: variant.calculated_price.original_amount || variant.calculated_price.calculated_amount,
+        currency_code: variant.calculated_price.currency_code || 'cop'
+      })
+    };
   }
 
-  return {
-    calculated_price_number: variant.calculated_price.calculated_amount,
-    calculated_price: convertToLocale({
-      amount: variant.calculated_price.calculated_amount,
-      currency_code: variant.calculated_price.currency_code,
-    }),
-    original_price_number: variant.calculated_price.original_amount,
-    original_price: convertToLocale({
-      amount: variant.calculated_price.original_amount,
-      currency_code: variant.calculated_price.currency_code,
-    }),
-    currency_code: variant.calculated_price.currency_code,
-    price_type: variant.calculated_price.calculated_price.price_list_type,
-    percentage_diff: getPercentageDiff(
-      variant.calculated_price.original_amount,
-      variant.calculated_price.calculated_amount
-    ),
+  // 🔧 FALLBACK: Use prices array and find COP price
+  if (variant.prices && Array.isArray(variant.prices) && variant.prices.length > 0) {
+    console.log('⚡ Using prices array fallback')
+    
+    // Find COP price specifically
+    const copPrice = variant.prices.find((price: any) => 
+      price.currency_code?.toLowerCase() === 'cop'
+    );
+    
+    const priceToUse = copPrice || variant.prices[0]; // Fallback to first price
+    
+    if (priceToUse && priceToUse.amount) {
+      console.log('💰 Found price:', priceToUse.amount, priceToUse.currency_code)
+      
+      return {
+        calculated_price_number: priceToUse.amount,
+        original_price_number: priceToUse.amount,
+        currency_code: priceToUse.currency_code || 'cop',
+        calculated_price: convertToLocale({
+          amount: priceToUse.amount,
+          currency_code: priceToUse.currency_code || 'cop'
+        }),
+        original_price: convertToLocale({
+          amount: priceToUse.amount,
+          currency_code: priceToUse.currency_code || 'cop'
+        })
+      };
+    }
   }
+
+  console.log('❌ No valid price found for variant:', variant.id)
+  return null;
+};
+
+export type ProductPrice = {
+  calculated_price: string
+  original_price?: string
+  calculated_price_number: number
+  original_price_number?: number
+  currency_code: string
 }
 
-export function getProductPrice({
+export const getProductPrice = ({
   product,
   variantId,
 }: {
-  product: Hit<HttpTypes.StoreProduct> | Partial<Hit<BaseHit>>
+  product: HttpTypes.StoreProduct | Partial<HttpTypes.StoreProduct> | any
   variantId?: string
-}) {
-  if (!product || !product.id) {
-    throw new Error("No product provided")
+}) => {
+  console.log('🔍 getProductPrice called for product:', product.id)
+
+  if (!product.variants || product.variants.length === 0) {
+    console.log('❌ No variants found')
+    return {
+      variantPrice: undefined,
+      cheapestPrice: undefined,
+    }
   }
 
-  const cheapestPrice = () => {
-    if (!product || !product.variants?.length) {
-      return null
+  console.log('📦 Processing', product.variants.length, 'variants')
+
+  const variants = product.variants as any[]
+
+  // Get prices for all variants
+  const variantsWithPrices = variants
+    .map((variant) => {
+      const priceInfo = getPricesForVariant(variant);
+      return priceInfo ? { ...variant, priceInfo } : null;
+    })
+    .filter(Boolean);
+
+  console.log('💰 Found', variantsWithPrices.length, 'variants with prices')
+
+  if (variantsWithPrices.length === 0) {
+    console.log('❌ No variants have valid prices')
+    return {
+      variantPrice: undefined,
+      cheapestPrice: undefined,
     }
-
-    const cheapestVariant: any = product.variants
-      .filter((v: any) => !!v.calculated_price)
-      .sort((a: any, b: any) => {
-        return (
-          a.calculated_price.calculated_amount -
-          b.calculated_price.calculated_amount
-        )
-      })[0]
-
-    return getPricesForVariant(cheapestVariant)
   }
 
-  const variantPrice = () => {
-    if (!product || !variantId) {
-      return null
-    }
+  // Find cheapest variant
+  const cheapestVariant = variantsWithPrices.reduce((cheapest, current) => {
+    if (!cheapest) return current;
+    return (current as any).priceInfo.calculated_price_number < (cheapest as any).priceInfo.calculated_price_number 
+      ? current 
+      : cheapest;
+  });
 
-    const variant: any = product.variants?.find(
-      (v: any) => v.id === variantId || v.sku === variantId
-    )
+  console.log('🏆 Cheapest variant:', (cheapestVariant as any).id, 'Price:', `$ ${((cheapestVariant as any).priceInfo.calculated_price_number / 100).toLocaleString()}`)
 
-    if (!variant) {
-      return null
-    }
-
-    return getPricesForVariant(variant)
+  // If specific variant requested, find its price
+  let selectedVariantPrice = undefined;
+  if (variantId) {
+    const selectedVariant = variantsWithPrices.find(v => (v as any).id === variantId);
+    selectedVariantPrice = selectedVariant ? (selectedVariant as any).priceInfo : undefined;
   }
 
   return {
-    product,
-    cheapestPrice: cheapestPrice(),
-    variantPrice: variantPrice(),
+    variantPrice: selectedVariantPrice,
+    cheapestPrice: (cheapestVariant as any).priceInfo,
   }
 }

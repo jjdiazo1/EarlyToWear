@@ -30,7 +30,7 @@ export const currencySymbolMap = {
   clp: "$",
   php: "₱",
   aed: "د.إ",
-  cop: "$",
+  cop: "COP",
   sar: "﷼",
   myr: "RM",
   ron: "lei",

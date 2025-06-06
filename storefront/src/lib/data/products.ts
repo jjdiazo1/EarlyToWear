@@ -60,26 +60,87 @@ export const listProducts = async ({
     ...(await getAuthHeaders()),
   }
 
+  console.log('🌍 Region info:', {
+    id: region?.id,
+    name: region?.name,
+    currency_code: region?.currency_code,
+    automatic_taxes: region?.automatic_taxes
+  });
+
+  // 🔧 SIMPLIFIED QUERY - Avoid calculated_price to prevent currency_code errors
+  const queryData = {
+    category_id,
+    collection_id,
+    limit,
+    offset,
+    region_id: region?.id,
+    // 🔧 SIMPLIFIED FIELDS without calculated_price
+    fields: [
+      "*variants",
+      "*variants.prices", // Use prices instead of calculated_price
+      "+variants.inventory_quantity",
+      "*seller",
+      "*seller.products",
+      "*seller.reviews",
+      "*seller.reviews.customer"
+    ].join(","),
+    ...queryParams,
+  };
+
+  console.log('📡 Query params:', queryData);
+
   return sdk.client
     .fetch<{
       products: HttpTypes.StoreProduct[]
       count: number
     }>(`/store/products`, {
       method: "GET",
-      query: {
-        category_id,
-        collection_id,
-        limit,
-        offset,
-        region_id: region?.id,
-        fields:
-          "*variants.calculated_price,+variants.inventory_quantity,*seller,*variants,*seller.products,*seller.reviews,*seller.reviews.customer",
-        ...queryParams,
-      },
+      query: queryData,
       headers,
       cache: "no-cache",
     })
     .then(({ products, count }) => {
+      console.log('📦 Raw API Response:');
+      console.log('- Products count:', products.length);
+      console.log('- Total count:', count);
+      
+      if (products.length > 0) {
+        const firstProduct: any = products[0];
+        console.log('🔍 First product details:');
+        console.log('- ID:', firstProduct.id);
+        console.log('- Title:', firstProduct.title);
+        console.log('- Has variants:', !!firstProduct.variants);
+        console.log('- Variants count:', firstProduct.variants?.length || 0);
+        
+        if (firstProduct.variants && firstProduct.variants.length > 0) {
+          const firstVariant: any = firstProduct.variants[0];
+          console.log('🔍 First variant details:');
+          console.log('- Variant ID:', firstVariant.id);
+          console.log('- Variant title:', firstVariant.title);
+          console.log('- prices (RAW):', firstVariant.prices);
+          console.log('- prices (JSON):', JSON.stringify(firstVariant.prices, null, 2));
+          console.log('- inventory_quantity:', firstVariant.inventory_quantity);
+          
+          // 🔧 Check if we have prices in COP
+          const copPrices = firstVariant.prices?.filter((p: any) => 
+            p.currency_code?.toLowerCase() === 'cop'
+          );
+          
+          if (copPrices && copPrices.length > 0) {
+            console.log('✅ SUCCESS: Found COP prices!', copPrices.length);
+          } else {
+            console.log('⚠️ WARNING: No COP prices found');
+            console.log('Available currencies:', 
+              firstVariant.prices?.map((p: any) => p.currency_code).join(', ')
+            );
+          }
+        } else {
+          console.log('❌ No variants found in first product');
+        }
+      } else {
+        console.log('❌ No products returned from API');
+      }
+
       const nextPage = count > offset + limit ? pageParam + 1 : null
 
       const response = products.filter((prod) => {
@@ -98,6 +159,8 @@ export const listProducts = async ({
         )
       })
 
+      console.log('✅ Filtered products with sellers:', response.length);
+
       return {
         response: {
           products: response,
@@ -106,6 +169,10 @@ export const listProducts = async ({
         nextPage: nextPage,
         queryParams,
       }
+    })
+    .catch((error) => {
+      console.error('❌ Error fetching products:', error);
+      throw error;
     })
 }
 

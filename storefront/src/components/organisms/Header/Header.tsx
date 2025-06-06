@@ -19,7 +19,17 @@ import { Wishlist } from "@/types/wishlist"
 import { Badge } from "@/components/atoms"
 
 export const Header = async () => {
-  const cart = await retrieveCart().catch(() => null)
+  // 🔧 SAFE cart retrieval - don't fail if cart fails
+  let cart: HttpTypes.StoreCart | null = null;
+  try {
+    cart = await retrieveCart();
+    console.log('✅ Header: Cart loaded successfully:', cart?.id);
+  } catch (error) {
+    console.error('❌ Header: Failed to load cart, using null:', error);
+    // Don't throw - just use null cart and let CartDropdown handle it
+    cart = null;
+  }
+
   const user = await retrieveCustomer()
   let wishlist: Wishlist[] = []
   if (user) {
@@ -37,7 +47,6 @@ export const Header = async () => {
   }
 
   return (
-    // 1) Aquí agregamos z-50 para que el header siempre esté por encima
     <header className="relative z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
       {/* Elementos decorativos sutiles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -45,7 +54,6 @@ export const Header = async () => {
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-100/20 to-blue-100/20 rounded-full blur-3xl"></div>
       </div>
 
-      {/* 2) Este contenedor interno mantiene z-10 para que su contenido esté por encima de sus propios elementos decorativos */}
       <div className="relative z-10 flex py-3 lg:px-8 px-4">
         <div className="flex items-center lg:w-1/3">
           <MobileNavbar
@@ -96,10 +104,11 @@ export const Header = async () => {
             </div>
           )}
 
-          {/* Cart dropdown con efecto */}
+          {/* Cart dropdown con efecto - SAFE with null handling */}
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <CartDropdown cart={cart} />
+            {/* 🔧 Pass cart even if null - CartDropdown will handle it */}
+            <CartDropdown initialCart={cart} />
           </div>
         </div>
       </div>

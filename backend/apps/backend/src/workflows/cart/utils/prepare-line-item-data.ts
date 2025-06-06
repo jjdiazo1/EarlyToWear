@@ -49,10 +49,14 @@ export function prepareLineItemData(data: Input) {
 
   let compareAtUnitPrice = data.compareAtUnitPrice
 
+  // 🔧 FIX: Agregar null check para calculated_price
   if (
     !isDefined(compareAtUnitPrice) &&
-    variant.calculated_price.calculated_price.price_list_type ===
-      PriceListType.SALE &&
+    variant.calculated_price && // ✅ VERIFICAR QUE NO SEA NULL
+    variant.calculated_price.calculated_price && // ✅ VERIFICAR NESTED OBJECT
+    variant.calculated_price.calculated_price.price_list_type === PriceListType.SALE &&
+    variant.calculated_price.original_amount && // ✅ VERIFICAR QUE EXISTA
+    variant.calculated_price.calculated_amount && // ✅ VERIFICAR QUE EXISTA
     !MathBN.eq(
       variant.calculated_price.original_amount,
       variant.calculated_price.calculated_amount
