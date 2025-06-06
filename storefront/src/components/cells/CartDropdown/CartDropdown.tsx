@@ -8,51 +8,103 @@ import { convertToLocale } from "@/lib/helpers/money";
 import { HttpTypes } from "@medusajs/types";
 import { useEffect, useRef, useState } from "react";
 import { PortalDropdown } from "@/components/molecules";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing"; // Use i18n router instead
 import { retrieveCart } from "@/lib/data/cart";
 
 const getItemCount = (cart: HttpTypes.StoreCart | null) => {
   return cart?.items?.reduce((acc, item) => acc + item.quantity, 0) || 0;
 };
 
-// 🔧 HELPER: Calculate item price manually since calculated_price might not work
+// 🔧 FIXED HELPER: Calculate item price manually with better fallbacks
 const getItemPrice = (item: any) => {
-  console.log('🔍 Getting price for item:', {
+  console.log('🔍 Getting price for cart item:', {
     id: item.id,
-    title: item.title,
+    title: item.title || item.product_title,
     unit_price: item.unit_price,
     subtotal: item.subtotal,
     total: item.total,
-    variant_prices: item.variant?.prices,
-    has_variant: !!item.variant
+    quantity: item.quantity,
+    product_id: item.product_id,
+    variant_id: item.variant_id,
+    variant: !!item.variant,
+    calculated_price: item.calculated_price,
+    original_price: item.original_price
   });
 
-  // Try multiple sources for price
+  // 1. Try calculated_price first (most reliable for cart items)
+  if (item.calculated_price && item.calculated_price > 0) {
+    console.log('✅ Using calculated_price:', item.calculated_price);
+    return item.calculated_price;
+  }
+
+  // 2. Try unit_price 
   if (item.unit_price && item.unit_price > 0) {
     console.log('✅ Using unit_price:', item.unit_price);
     return item.unit_price;
   }
 
+  // 3. Try original_price
+  if (item.original_price && item.original_price > 0) {
+    console.log('✅ Using original_price:', item.original_price);
+    return item.original_price;
+  }
+
+  // 4. Calculate from subtotal if we have quantity
+  if (item.subtotal && item.subtotal > 0 && item.quantity && item.quantity > 0) {
+    const unitFromSubtotal = item.subtotal / item.quantity;
+    console.log('✅ Calculated from subtotal/quantity:', unitFromSubtotal);
+    return unitFromSubtotal;
+  }
+
+  // 5. Calculate from total if we have quantity  
+  if (item.total && item.total > 0 && item.quantity && item.quantity > 0) {
+    const unitFromTotal = item.total / item.quantity;
+    console.log('✅ Calculated from total/quantity:', unitFromTotal);
+    return unitFromTotal;
+  }
+
+  // 6. Try to find COP price in variant prices
+  const variant = item.variant;
+  if (variant?.prices && Array.isArray(variant.prices)) {
+    const copPrice = variant.prices.find((p: any) => 
+      p.currency_code?.toLowerCase() === 'cop'
+    );
+    if (copPrice && copPrice.amount) {
+      console.log('✅ Using variant COP price:', copPrice.amount);
+      return copPrice.amount;
+    }
+    
+    // Try any price if COP not found
+    const anyPrice = variant.prices.find((p: any) => p.amount && p.amount > 0);
+    if (anyPrice) {
+      console.log('✅ Using any variant price:', anyPrice.amount);
+      return anyPrice.amount;
+    }
+  }
+
+  // 7. Try product variant prices if available
+  if (item.product?.variants && Array.isArray(item.product.variants)) {
+    const productVariant = item.product.variants.find((v: any) => v.id === item.variant_id);
+    if (productVariant?.prices) {
+      const copPrice = productVariant.prices.find((p: any) => 
+        p.currency_code?.toLowerCase() === 'cop'
+      );
+      if (copPrice && copPrice.amount) {
+        console.log('✅ Using product variant COP price:', copPrice.amount);
+        return copPrice.amount;
+      }
+    }
+  }
+
+  // 8. Last resort: use subtotal or total as-is
   if (item.subtotal && item.subtotal > 0) {
-    console.log('✅ Using subtotal:', item.subtotal);
+    console.log('⚠️ Using subtotal as unit price:', item.subtotal);
     return item.subtotal;
   }
 
   if (item.total && item.total > 0) {
-    console.log('✅ Using total:', item.total);
+    console.log('⚠️ Using total as unit price:', item.total);
     return item.total;
-  }
-
-  // Try to find COP price in variant prices
-  const variant = item.variant;
-  if (variant?.prices) {
-    const copPrice = variant.prices.find((p: any) => 
-      p.currency_code?.toLowerCase() === 'cop'
-    );
-    if (copPrice) {
-      console.log('✅ Using variant COP price:', copPrice.amount);
-      return copPrice.amount;
-    }
   }
   
   console.log('❌ No price found, using 0');
@@ -108,21 +160,42 @@ export const CartDropdown = ({ initialCart }: { initialCart?: HttpTypes.StoreCar
 
   const cartItemsCount = getItemCount(cart);
   
-  // 🔧 MANUAL total calculation to avoid currency_code errors
+  // 🔧 IMPROVED: Total calculation with better error handling
   const calculateTotal = () => {
     if (!cart?.items || cart.items.length === 0) return 0;
     
-    return cart.items.reduce((total, item) => {
+    console.log('💰 Calculating cart total...');
+    
+    const total = cart.items.reduce((total, item) => {
       const itemPrice = getItemPrice(item);
-      return total + (itemPrice * item.quantity);
+      const itemTotal = itemPrice * item.quantity;
+      console.log(`💰 Item ${item.title}: ${itemPrice} x ${item.quantity} = ${itemTotal}`);
+      return total + itemTotal;
     }, 0);
+
+    console.log('💰 Final cart total:', total);
+    return total;
   };
 
   const totalAmount = calculateTotal();
-  const total = convertToLocale({
-    amount: totalAmount,
-    currency_code: cart?.currency_code || "cop",
-  });
+  
+  // 🔧 IMPROVED: Better total formatting with error handling
+  let total;
+  try {
+    total = convertToLocale({
+      amount: totalAmount,
+      currency_code: cart?.currency_code || "cop",
+    });
+  } catch (error) {
+    console.error('❌ Error formatting total:', error);
+    // Fallback formatting
+    total = new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(totalAmount);
+  }
 
   // 🔍 DEBUG: Ver qué cart tenemos
   console.log('🛒 CartDropdown state:', {
@@ -144,20 +217,20 @@ export const CartDropdown = ({ initialCart }: { initialCart?: HttpTypes.StoreCar
     setOpen(true);
   };
 
-  // Función para cerrar con delay
+  // Función para cerrar con delay - MAS TIEMPO para hacer click
   const handleMouseLeave = () => {
     hoverTimeoutRef.current = setTimeout(() => {
       setOpen(false);
-    }, 150);
+    }, 300); // Aumentado a 300ms para dar más tiempo
   };
 
-  // Navegación al carrito
+  // 🔧 FIXED: Navigation function - STOP EVENT BUBBLING
   const goToCart = (e: React.MouseEvent) => {
     e.preventDefault();
-    e.stopPropagation();
+    e.stopPropagation(); // Prevenir que el click cierre el dropdown
     console.log("🛒 GO TO CART CLICKED!");
-    setOpen(false);
     
+    // Navegar inmediatamente SIN cerrar dropdown primero
     try {
       router.push("/cart");
       console.log("✅ router.push called");
@@ -167,12 +240,11 @@ export const CartDropdown = ({ initialCart }: { initialCart?: HttpTypes.StoreCar
     }
   };
 
-  // Navegación a categorías
+  // 🔧 FIXED: Navigation to categories - STOP EVENT BUBBLING  
   const goToCategories = (e: React.MouseEvent) => {
     e.preventDefault();
-    e.stopPropagation();
+    e.stopPropagation(); // Prevenir que el click cierre el dropdown
     console.log("📂 GO TO CATEGORIES CLICKED!");
-    setOpen(false);
     
     try {
       router.push("/categories");
@@ -191,9 +263,16 @@ export const CartDropdown = ({ initialCart }: { initialCart?: HttpTypes.StoreCar
     };
   }, []);
 
-  // Cerrar el dropdown al hacer clic fuera del contenedor
+  // 🔧 FIXED: Cerrar el dropdown al hacer clic fuera - NO interferir con botones internos
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Element;
+      
+      // No cerrar si el click es en un botón del dropdown o sus hijos
+      if (target.closest('button[data-cart-action]')) {
+        return;
+      }
+      
       if (
         containerRef.current &&
         !containerRef.current.contains(e.target as Node)
@@ -239,12 +318,13 @@ export const CartDropdown = ({ initialCart }: { initialCart?: HttpTypes.StoreCar
         )}
       </button>
 
-      {/* Portal dropdown */}
+      {/* Portal dropdown - IMPROVED MOUSE HANDLING */}
       <PortalDropdown show={open}>
         <div 
           className="p-4"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          onClick={(e) => e.stopPropagation()} // Prevent clicks from bubbling
         >
           {/* Encabezado del dropdown */}
           <div className="flex items-center gap-2 mb-4">
@@ -282,9 +362,12 @@ export const CartDropdown = ({ initialCart }: { initialCart?: HttpTypes.StoreCar
                   </span>
                 </div>
                 
+                {/* 🔧 FIXED: Button with data attribute to prevent dropdown close */}
                 <button
                   type="button"
+                  data-cart-action="go-to-cart"
                   onClick={goToCart}
+                  onMouseDown={(e) => e.stopPropagation()} // Extra protection
                   className="w-full py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 
                              hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl 
                              transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer"
@@ -335,7 +418,9 @@ export const CartDropdown = ({ initialCart }: { initialCart?: HttpTypes.StoreCar
               </p>
               
               <button
+                data-cart-action="go-to-categories"
                 onClick={goToCategories}
+                onMouseDown={(e) => e.stopPropagation()} // Extra protection
                 className="w-full py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 
                            hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl 
                            transition-all duration-300 cursor-pointer"
