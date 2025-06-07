@@ -1,5 +1,40 @@
 import { convertToLocale } from "@/lib/helpers/money"
-import { calculateCartTotal } from "@/lib/helpers/cart-helpers" // 🔧 Import helper
+
+// 🔧 HELPER: Same price logic as other components
+const getItemPrice = (item: any) => {
+  if (item.calculated_price && item.calculated_price > 0) {
+    return item.calculated_price;
+  }
+  if (item.unit_price && item.unit_price > 0) {
+    return item.unit_price;
+  }
+  if (item.original_price && item.original_price > 0) {
+    return item.original_price;
+  }
+  if (item.subtotal && item.subtotal > 0 && item.quantity && item.quantity > 0) {
+    return item.subtotal / item.quantity;
+  }
+  if (item.total && item.total > 0 && item.quantity && item.quantity > 0) {
+    return item.total / item.quantity;
+  }
+  
+  const variant = item.variant;
+  if (variant?.prices && Array.isArray(variant.prices)) {
+    const copPrice = variant.prices.find((p: any) => 
+      p.currency_code?.toLowerCase() === 'cop'
+    );
+    if (copPrice && copPrice.amount) {
+      return copPrice.amount;
+    }
+    
+    const anyPrice = variant.prices.find((p: any) => p.amount && p.amount > 0);
+    if (anyPrice) {
+      return anyPrice.amount;
+    }
+  }
+  
+  return 0;
+};
 
 export const CartSummary = ({
   item_total,
@@ -17,44 +52,74 @@ export const CartSummary = ({
   cart?: any // Optional cart object for manual calculation
 }) => {
   
-  // 🔧 Calculate totals manually if they're 0 or undefined
+  // 🔧 FIXED: Always calculate from cart items if cart is provided
   let calculatedItemTotal = item_total;
+  let calculatedShippingTotal = shipping_total;
+  let calculatedTax = tax;
   let calculatedTotal = total;
   
-  if (cart && cart.items && (item_total === 0 || !item_total)) {
-    console.log('🔧 CartSummary: Calculating totals manually');
-    const { amount } = calculateCartTotal(cart.items, currency_code);
-    calculatedItemTotal = amount;
-    calculatedTotal = amount + (shipping_total || 0) + (tax || 0);
+  // Always recalculate if we have cart items
+  if (cart && cart.items && cart.items.length > 0) {
+    console.log('🔧 CartSummary: Always calculating totals from cart items');
+    
+    // Calculate item total manually
+    calculatedItemTotal = cart.items.reduce((total: number, item: any) => {
+      const itemPrice = getItemPrice(item);
+      const itemTotal = itemPrice * item.quantity;
+      console.log(`💰 Item ${item.product_title}: ${itemPrice} x ${item.quantity} = ${itemTotal}`);
+      return total + itemTotal;
+    }, 0);
+    
+    // Handle shipping - clean up NaN values
+    calculatedShippingTotal = shipping_total;
+    if (isNaN(calculatedShippingTotal) || calculatedShippingTotal === null || calculatedShippingTotal === undefined) {
+      calculatedShippingTotal = 0;
+    }
+    
+    // Handle tax
+    calculatedTax = tax || 0;
+    if (isNaN(calculatedTax)) {
+      calculatedTax = 0;
+    }
+    
+    // Calculate final total
+    calculatedTotal = calculatedItemTotal + calculatedShippingTotal + calculatedTax;
     
     console.log('🔍 CartSummary calculated:', {
       original_item_total: item_total,
       calculated_item_total: calculatedItemTotal,
-      shipping: shipping_total,
-      tax: tax,
-      calculated_total: calculatedTotal
+      shipping: calculatedShippingTotal,
+      tax: calculatedTax,
+      calculated_total: calculatedTotal,
+      cart_items_count: cart.items.length
     });
   }
 
-  const formattedItemTotal = convertToLocale({
-    amount: calculatedItemTotal,
-    currency_code,
-  })
+  // 🔧 FIXED: Direct Colombian formatting - force correct format
+  const formatPrice = (amount: number) => {
+    // Always use manual formatting to ensure it works
+    const formatted = new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(amount);
+    
+    console.log(`💰 CartSummary formatting ${amount} -> ${formatted}`);
+    return formatted;
+  };
 
-  const formattedShippingTotal = convertToLocale({
-    amount: shipping_total,
-    currency_code,
-  })
+  const formattedItemTotal = formatPrice(calculatedItemTotal);
+  const formattedShippingTotal = formatPrice(calculatedShippingTotal);
+  const formattedTotal = formatPrice(calculatedTotal);
+  const formattedTax = formatPrice(calculatedTax);
 
-  const formattedTotal = convertToLocale({
-    amount: calculatedTotal,
-    currency_code,
-  })
-
-  const formattedTax = convertToLocale({
-    amount: tax,
-    currency_code,
-  })
+  console.log('💰 CartSummary formatted prices:', {
+    itemTotal: formattedItemTotal,
+    shipping: formattedShippingTotal,
+    tax: formattedTax,
+    total: formattedTotal
+  });
 
   return (
     <div className="space-y-3">
@@ -63,14 +128,16 @@ export const CartSummary = ({
         <span className="font-medium">{formattedItemTotal}</span>
       </div>
       
-      {shipping_total > 0 && (
+      {calculatedShippingTotal >= 0 && (
         <div className="flex justify-between items-center py-2 border-b border-gray-100">
           <span className="text-gray-600">Shipping</span>
-          <span className="font-medium">{formattedShippingTotal}</span>
+          <span className="font-medium">
+            {calculatedShippingTotal === 0 ? 'Free' : formattedShippingTotal}
+          </span>
         </div>
       )}
       
-      {tax > 0 && (
+      {calculatedTax > 0 && (
         <div className="flex justify-between items-center py-2 border-b border-gray-100">
           <span className="text-gray-600">Tax</span>
           <span className="font-medium">{formattedTax}</span>

@@ -873,6 +873,14 @@ img, video {
   margin-top: 2rem;
 }
 
+.mr-3 {
+  margin-right: .75rem;
+}
+
+.mr-2 {
+  margin-right: .5rem;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -2421,6 +2429,11 @@ img, video {
   background-color: rgba(var(--indigo-700), 1);
 }
 
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -3633,6 +3646,10 @@ img, video {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .font-\[\'Anton\'\] {

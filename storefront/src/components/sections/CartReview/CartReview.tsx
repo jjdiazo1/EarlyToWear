@@ -25,6 +25,7 @@ const Review = ({ cart }: { cart: any }) => {
           total={cart?.total || 0}
           currency_code={cart?.currency_code || ""}
           tax={cart?.tax_total || 0}
+          cart={cart} // 🔧 FIXED: Add cart parameter so it can calculate totals
         />
       </div>
 
