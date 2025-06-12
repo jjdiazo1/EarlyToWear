@@ -1,11 +1,9 @@
 "use client"
 
-import { Button } from "@/components/atoms"
-import { BinIcon } from "@/icons"
-import { removeShippingMethod } from "@/lib/data/cart"
 import { convertToLocale } from "@/lib/helpers/money"
 import { HttpTypes } from "@medusajs/types"
 import { Text } from "@medusajs/ui"
+import { useRouter, usePathname } from "next/navigation"
 
 export const CartShippingMethodRow = ({
   method,
@@ -14,8 +12,11 @@ export const CartShippingMethodRow = ({
   method: HttpTypes.StoreCartShippingMethod
   currency_code: string
 }) => {
-  const handleRemoveShippingMethod = async () => {
-    await removeShippingMethod(method.id)
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleEdit = () => {
+    router.replace(pathname + "?step=delivery")
   }
 
   return (
@@ -46,21 +47,19 @@ export const CartShippingMethodRow = ({
             </div>
           </div>
 
-          {/* Remove button */}
+          {/* Change button */}
           <div className="relative group/button">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg blur opacity-0 group-hover/button:opacity-25 transition duration-300"></div>
-            <Button
-              variant="tonal"
-              size="small"
-              className="relative bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 hover:text-red-700 p-2 rounded-lg hover:scale-105 transition-all duration-200"
-              onClick={handleRemoveShippingMethod}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-0 group-hover/button:opacity-25 transition duration-300"></div>
+            <button
+              className="relative bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-600 hover:text-blue-700 px-3 py-1.5 rounded-lg hover:scale-105 transition-all duration-200 text-sm font-medium"
+              onClick={handleEdit}
             >
-              <BinIcon size={16} />
-            </Button>
+              Change
+            </button>
           </div>
         </div>
 
-        {/* Delivery time estimate (if available) */}
+        {/* Delivery time estimate */}
         <div className="mt-3 pt-3 border-t border-blue-200/30">
           <div className="flex items-center gap-2 text-sm text-blue-600">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-blue-500">

@@ -195,20 +195,6 @@ export const ProductDetailsHeader = ({
             </div>
           )}
 
-          {/* 🔧 BETTER DEBUG INFO - More specific */}
-          {process.env.NODE_ENV === 'development' && (
-            <div className="mt-2 p-2 bg-gray-100 text-xs">
-              <strong>Debug Info:</strong><br/>
-              Product ID: {product.id}<br/>
-              Variant ID: {variantId || 'NONE'}<br/>
-              Has Price: {variantHasPrice ? 'Yes' : 'No'}<br/>
-              Can Add to Cart: {canAddToCart ? 'Yes' : 'No'}<br/>
-              Currency: {displayPrice?.currency_code || 'NONE'}<br/>
-              Calculated Price: {currentVariant?.calculated_price ? 'Yes' : 'No'}<br/>
-              Prices Array: {(currentVariant as any)?.prices?.length || 0} items<br/>
-              Stock: {variantStock}
-            </div>
-          )}
         </div>
         <div>
           {/* Add to Wishlist */}

@@ -1,7 +1,7 @@
 "use client"
 
 import ErrorMessage from "@/components/molecules/ErrorMessage/ErrorMessage"
-import { setShippingMethod } from "@/lib/data/cart"
+import { removeShippingMethod, setShippingMethod } from "@/lib/data/cart"
 import { calculatePriceForShippingOption } from "@/lib/data/fulfillment"
 import { convertToLocale } from "@/lib/helpers/money"
 import { CheckCircleSolid, ChevronUpDown, Loader } from "@medusajs/icons"
@@ -137,6 +137,22 @@ const CartShippingMethodsSection: React.FC<ShippingProps> = ({
     setIsLoadingPrices(false)
   }
 
+  // Function to remove/clear shipping method - SIMPLIFIED VERSION
+  const handleRemoveShippingMethod = async () => {
+    setIsLoadingPrices(true)
+    setError(null)
+
+    try {
+      // Try using the direct API call
+      await removeShippingMethod(cart.shipping_methods?.[0]?.id || '')
+    } catch (err: any) {
+      console.error('Error removing shipping method:', err)
+      setError('Unable to remove shipping method. Please select a different option.')
+    }
+
+    setIsLoadingPrices(false)
+  }
+
   useEffect(() => {
     setError(null)
   }, [isOpen])
@@ -161,6 +177,13 @@ const CartShippingMethodsSection: React.FC<ShippingProps> = ({
       missingShippingSellers.includes(item.product?.seller?.id!)
     )
     .map((item) => item.product?.seller?.name)
+
+  // Get the currently selected method for each seller
+  const getCurrentlySelectedMethod = (sellerId: string) => {
+    return cart.shipping_methods?.find(method => 
+      _shippingMethods?.find(sm => sm.id === method.id)?.seller_id === sellerId
+    )
+  }
 
   return (
     <div className="group relative">
@@ -224,6 +247,7 @@ const CartShippingMethodsSection: React.FC<ShippingProps> = ({
               <Button 
                 onClick={handleEdit} 
                 variant="tonal"
+                data-edit-shipping
                 className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 hover:bg-white hover:scale-105 transition-all duration-300"
               >
                 Edit
@@ -238,6 +262,8 @@ const CartShippingMethodsSection: React.FC<ShippingProps> = ({
               <div data-testid="delivery-options-container">
                 <div className="pb-8 md:pt-0 pt-2">
                   {Object.keys(groupedBySellerId).map((key) => {
+                    const currentlySelected = getCurrentlySelectedMethod(key)
+                    
                     return (
                       <div key={key} className="mb-6">
                         <div className="flex items-center gap-3 mb-4">
@@ -252,7 +278,7 @@ const CartShippingMethodsSection: React.FC<ShippingProps> = ({
                         </div>
                         
                         <Listbox
-                          value={cart.shipping_methods?.[0]?.id}
+                          value={currentlySelected?.id || ""}
                           onChange={(value) => {
                             handleSetShippingMethod(value)
                           }}
@@ -266,7 +292,10 @@ const CartShippingMethodsSection: React.FC<ShippingProps> = ({
                               {({ open }) => (
                                 <>
                                   <span className="block truncate font-medium">
-                                    Choose delivery option
+                                    {currentlySelected 
+                                      ? currentlySelected.name 
+                                      : "Choose delivery option"
+                                    }
                                   </span>
                                   <ChevronUpDown
                                     className={clx(
@@ -289,15 +318,33 @@ const CartShippingMethodsSection: React.FC<ShippingProps> = ({
                                 className="absolute z-20 w-full overflow-auto bg-white/90 backdrop-blur-md border border-gray-200/50 rounded-xl shadow-xl max-h-60 focus:outline-none mt-1"
                                 data-testid="shipping-address-options"
                               >
+                                {/* Shipping method options */}
                                 {groupedBySellerId[key].map((option: any) => {
+                                  const isSelected = currentlySelected?.id === option.id
+                                  
                                   return (
                                     <Listbox.Option
-                                      className="cursor-pointer select-none relative px-6 py-4 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-200 border-b border-gray-100/50 last:border-b-0 first:rounded-t-xl last:rounded-b-xl"
+                                      className={clsx(
+                                        "cursor-pointer select-none relative px-6 py-4 transition-all duration-200 border-b border-gray-100/50 last:border-b-0 first:rounded-t-xl last:rounded-b-xl",
+                                        isSelected 
+                                          ? "bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200/50" 
+                                          : "hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50"
+                                      )}
                                       value={option.id}
                                       key={option.id}
                                     >
                                       <div className="flex justify-between items-center">
-                                        <span className="font-medium text-gray-800">{option.name}</span>
+                                        <div className="flex items-center gap-2">
+                                          {isSelected && (
+                                            <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                                          )}
+                                          <span className={clsx(
+                                            "font-medium",
+                                            isSelected ? "text-blue-800" : "text-gray-800"
+                                          )}>
+                                            {option.name}
+                                          </span>
+                                        </div>
                                         <span className="font-semibold text-blue-600">
                                           {option.price_type === "flat" ? (
                                             convertToLocale({

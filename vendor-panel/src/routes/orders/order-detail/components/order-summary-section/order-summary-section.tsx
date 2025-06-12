@@ -26,6 +26,7 @@ import {
   Text,
   toast,
   usePrompt,
+  StatusBadge
 } from "@medusajs/ui"
 
 import { ActionMenu } from "../../../../../components/common/action-menu"

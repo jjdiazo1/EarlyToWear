@@ -5,7 +5,7 @@ import { setAddresses } from "@/lib/data/cart"
 import compareAddresses from "@/lib/helpers/compare-addresses"
 import { HttpTypes } from "@medusajs/types"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { useActionState, useEffect } from "react"
+import { useActionState, useEffect, useState, Suspense } from "react"
 import { Button } from "@/components/atoms"
 import ErrorMessage from "@/components/molecules/ErrorMessage/ErrorMessage"
 import Spinner from "@/icons/spinner"
@@ -13,16 +13,24 @@ import ShippingAddress from "@/components/organisms/ShippingAddress/ShippingAddr
 import { CheckCircleSolid } from "@medusajs/icons"
 import { Link } from "@/i18n/routing"
 
-export const CartAddressSection = ({
+// Content component that uses searchParams safely
+const CartAddressSectionContent = ({
   cart,
   customer,
 }: {
   cart: HttpTypes.StoreCart | null
   customer: HttpTypes.StoreCustomer | null
 }) => {
-  const searchParams = useSearchParams()
   const router = useRouter()
   const pathname = usePathname()
+  const [searchParams, setSearchParams] = useState<URLSearchParams | null>(null)
+  const [isClient, setIsClient] = useState(false)
+
+  // Safely get search params after hydration
+  useEffect(() => {
+    setIsClient(true)
+    setSearchParams(new URLSearchParams(window.location.search))
+  }, [])
 
   const isAddress = Boolean(
     cart?.shipping_address &&
@@ -33,7 +41,11 @@ export const CartAddressSection = ({
       cart?.shipping_address.postal_code &&
       cart?.shipping_address.country_code
   )
-  const isOpen = searchParams.get("step") === "address" || !isAddress
+  
+  // Only determine isOpen after client-side hydration
+  const isOpen = isClient 
+    ? (searchParams?.get("step") === "address" || !isAddress)
+    : !isAddress // fallback for server/initial render
 
   const { state: sameAsBilling, toggle: toggleSameAsBilling } = useToggleState(
     cart?.shipping_address && cart?.billing_address
@@ -44,10 +56,10 @@ export const CartAddressSection = ({
   const [message, formAction] = useActionState(setAddresses, sameAsBilling)
 
   useEffect(() => {
-    if (!isAddress) {
+    if (isClient && !isAddress) {
       router.replace(pathname + "?step=address")
     }
-  }, [isAddress])
+  }, [isAddress, isClient])
 
   const handleEdit = () => {
     router.replace(pathname + "?step=address")
@@ -164,7 +176,7 @@ export const CartAddressSection = ({
             </div>
           )}
           
-          {isAddress && !searchParams.get("step") && (
+          {isAddress && isClient && !searchParams?.get("step") && (
             <div className="mt-6">
               <Link href="/checkout?step=delivery" className="block">
                 <div className="relative group/button">
@@ -187,4 +199,45 @@ export const CartAddressSection = ({
       </div>
     </div>
   )
+}
+
+// Loading skeleton component
+const CartAddressSkeleton = () => (
+  <div className="group relative">
+    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-pink-500/5 rounded-2xl blur opacity-60"></div>
+    <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-lg p-6">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="h-1 w-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+        <div className="h-8 bg-gray-200 rounded-lg w-48 animate-pulse"></div>
+      </div>
+      <div className="space-y-4">
+        <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+        <div className="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
+        <div className="h-4 bg-gray-200 rounded animate-pulse w-1/2"></div>
+      </div>
+    </div>
+  </div>
+)
+
+// Main component with proper hydration handling
+export const CartAddressSection = ({
+  cart,
+  customer,
+}: {
+  cart: HttpTypes.StoreCart | null
+  customer: HttpTypes.StoreCustomer | null
+}) => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Show skeleton until mounted to avoid hydration issues
+  if (!mounted) {
+    return <CartAddressSkeleton />
+  }
+
+  // No Suspense needed since we're handling the mounting manually
+  return <CartAddressSectionContent cart={cart} customer={customer} />
 }

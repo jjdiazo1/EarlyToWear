@@ -4,16 +4,16 @@ import { createOrderFulfillmentWorkflow } from '@medusajs/medusa/core-flows'
 import { VendorCreateFulfillmentType } from '../../validators'
 
 /**
- * @oas [post] /vendor/products/{id}/fulfillments
+ * @oas [post] /vendor/orders/{id}/fulfillments
  * operationId: "VendorCreateFulfillment"
- * summary: "Update a Product"
- * description: "Updates an existing product for the authenticated vendor."
+ * summary: "Create Order Fulfillment"
+ * description: "Creates a fulfillment for the authenticated vendor's order."
  * x-authenticated: true
  * parameters:
  *   - in: path
  *     name: id
  *     required: true
- *     description: The ID of the Product.
+ *     description: The ID of the Order.
  *     schema:
  *       type: string
  * requestBody:
@@ -43,13 +43,24 @@ export const POST = async (
 ) => {
   const { id } = req.params
 
+  console.log("🔍 Creating fulfillment with data:", req.validatedBody)
+
   const { result: fulfillment } = await createOrderFulfillmentWorkflow(
     req.scope
   ).run({
     input: {
       order_id: id,
       created_by: req.auth_context.actor_id,
-      ...req.validatedBody
+      location_id: req.validatedBody.location_id,
+      items: req.validatedBody.items,
+      requires_shipping: req.validatedBody.requires_shipping,
+      // Añadir campos opcionales solo si están presentes
+      ...(req.validatedBody.shipping_option_id && {
+        shipping_option_id: req.validatedBody.shipping_option_id
+      }),
+      ...(req.validatedBody.no_notification !== undefined && {
+        no_notification: req.validatedBody.no_notification
+      })
     },
     throwOnError: true
   })

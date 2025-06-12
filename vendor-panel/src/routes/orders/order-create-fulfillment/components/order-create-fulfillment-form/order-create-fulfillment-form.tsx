@@ -82,27 +82,71 @@ export function OrderCreateFulfillmentForm({
 
   const { shipping_options = [], isLoading: isShippingOptionsLoading } =
     useShippingOptions({
-      fields: "+service_zone.fulfillment_set.location.id",
+      fields: "+service_zone.fulfillment_set.location.id,+shipping_profile",
     })
 
-  const filteredShippingOptions = shipping_options.filter((o) => o !== null)
+  // Filter shipping options by selected location
+  const filteredShippingOptions = useMemo(() => {
+    if (!selectedLocationId) return []
+    
+    return shipping_options.filter((option) => {
+      return option?.service_zone?.fulfillment_set?.location?.id === selectedLocationId
+    })
+  }, [shipping_options, selectedLocationId])
 
   const shippingOptionId = useWatch({
     name: "shipping_option_id",
     control: form.control,
   })
 
-  const handleSubmit = form.handleSubmit(async (data) => {
-    const selectedShippingOption = shipping_options.find(
-      (o) => o?.id === shippingOptionId
-    )
+  // DEBUG: Log shipping profiles
+  useEffect(() => {
+    console.log("🔍 DEBUG: Shipping Options:", filteredShippingOptions.map(o => ({
+      id: o?.id,
+      name: o?.name,
+      shipping_profile_id: o?.shipping_profile_id,
+      shipping_profile: o?.shipping_profile
+    })))
+    
+    console.log("🔍 DEBUG: Order Items Shipping Profiles:", order.items.map(item => ({
+      id: item.id,
+      title: item.title,
+      shipping_profile_id: item.variant?.product?.shipping_profile?.id,
+      shipping_profile_name: item.variant?.product?.shipping_profile?.name,
+      requires_shipping: item.requires_shipping
+    })))
+  }, [filteredShippingOptions, order.items])
 
-    if (!selectedShippingOption) {
-      form.setError("shipping_option_id", {
-        type: "manual",
-        message: t("orders.fulfillment.error.noShippingOption"),
-      })
-      return
+  // Reset shipping option when location changes
+  useEffect(() => {
+    if (selectedLocationId) {
+      form.setValue("shipping_option_id", "")
+    }
+  }, [selectedLocationId, form])
+
+  const handleSubmit = form.handleSubmit(async (data) => {
+    // DEBUG logging
+    console.log("🚀 SUBMIT DEBUG:")
+    console.log("Selected Location:", selectedLocationId)
+    console.log("Selected Shipping Option ID:", shippingOptionId)
+    console.log("Requires Shipping:", requiresShipping)
+    console.log("Form Data:", data)
+
+    if (requiresShipping) {
+      const selectedShippingOption = filteredShippingOptions.find(
+        (o) => o?.id === shippingOptionId
+      )
+
+      if (!selectedShippingOption) {
+        form.setError("shipping_option_id", {
+          type: "manual",
+          message: t("orders.fulfillment.error.noShippingOption"),
+        })
+        return
+      }
+
+      console.log("Selected Shipping Option:", selectedShippingOption)
+      console.log("Shipping Profile ID:", selectedShippingOption.shipping_profile_id)
     }
 
     if (!selectedLocationId) {
@@ -113,41 +157,109 @@ export function OrderCreateFulfillmentForm({
       return
     }
 
-    const selectedShippingProfileId =
-      selectedShippingOption?.shipping_profile_id
+    // For non-shipping fulfillments, just include all items with quantities
+    if (!requiresShipping) {
+      const payload: HttpTypes.AdminCreateOrderFulfillment & {
+        requires_shipping: boolean
+      } = {
+        location_id: selectedLocationId,
+        requires_shipping: false,
+        items: Object.entries(data.quantity)
+          .filter(([id, value]) => !!value)
+          .map(([id, quantity]) => ({ id, quantity })),
+      }
 
-    const itemShippingProfileMap = order.items.reduce(
-      (acc, item) => {
-        acc[item.id] = item.variant?.product?.shipping_profile?.id ?? null
-        return acc
-      },
-      {} as Record<string, string | null>
+      console.log("Non-shipping payload:", payload)
+
+      try {
+        await createOrderFulfillment(payload)
+        toast.success(t("orders.fulfillment.toast.created"))
+        handleSuccess(`/orders/${order.id}`)
+      } catch (e: any) {
+        console.error("Fulfillment error:", e)
+        toast.error(e.message)
+      }
+      return
+    }
+
+    // For shipping fulfillments, check compatibility
+    const selectedShippingOption = filteredShippingOptions.find(
+      (o) => o?.id === shippingOptionId
     )
+    
+    const selectedShippingProfileId = selectedShippingOption?.shipping_profile_id
+    
+    console.log("Checking profile compatibility...")
+    console.log("Selected profile ID:", selectedShippingProfileId)
+
+    // Get unique shipping profiles from items
+    const itemShippingProfiles = new Set(
+      order.items
+        .filter(item => requiresShipping ? item.requires_shipping : !item.requires_shipping)
+        .map(item => item.variant?.product?.shipping_profile?.id)
+        .filter(Boolean)
+    )
+
+    console.log("Item shipping profiles:", Array.from(itemShippingProfiles))
+
+    // If we have items with different shipping profiles, we need to create separate fulfillments
+    // OR allow fulfillment without strict profile matching (depending on your business logic)
+    
+    // OPTION 1: Strict matching (current approach)
+    const compatibleItems = Object.entries(data.quantity).filter(([id, value]) => {
+      if (!value) return false
+      
+      const item = order.items.find(item => item.id === id)
+      if (!item) return false
+      
+      const itemShippingProfileId = item.variant?.product?.shipping_profile?.id
+      const isCompatible = itemShippingProfileId === selectedShippingProfileId
+      
+      console.log(`Item ${item.title}:`, {
+        itemProfileId: itemShippingProfileId,
+        selectedProfileId: selectedShippingProfileId,
+        compatible: isCompatible
+      })
+      
+      return isCompatible
+    })
+
+    // OPTION 2: Relaxed matching - allow fulfillment regardless of profile
+    // const compatibleItems = Object.entries(data.quantity).filter(([id, value]) => !!value)
+
+    if (compatibleItems.length === 0) {
+      console.log("❌ No compatible items found")
+      
+      // Show detailed error
+      const itemProfiles = order.items.map(item => ({
+        title: item.title,
+        profileId: item.variant?.product?.shipping_profile?.id,
+        profileName: item.variant?.product?.shipping_profile?.name
+      }))
+      
+      console.log("Available item profiles:", itemProfiles)
+      
+      toast.error(`No hay items compatibles. Perfiles encontrados: ${Array.from(itemShippingProfiles).join(", ")}. Perfil seleccionado: ${selectedShippingProfileId}`)
+      return
+    }
 
     const payload: HttpTypes.AdminCreateOrderFulfillment & {
       requires_shipping: boolean
     } = {
       location_id: selectedLocationId,
       requires_shipping: true,
-      // shipping_option_id: shippingOptionId,
-      // no_notification: !data.send_notification,
-      items: Object.entries(data.quantity)
-        .filter(
-          ([id, value]) =>
-            !!value && itemShippingProfileMap[id] === selectedShippingProfileId
-        )
-        .map(([id, quantity]) => ({
-          id,
-          quantity,
-        })),
+      shipping_option_id: shippingOptionId,
+      items: compatibleItems.map(([id, quantity]) => ({ id, quantity })),
     }
+
+    console.log("Final payload:", payload)
 
     try {
       await createOrderFulfillment(payload)
-
       toast.success(t("orders.fulfillment.toast.created"))
       handleSuccess(`/orders/${order.id}`)
     } catch (e: any) {
+      console.error("Fulfillment error:", e)
       toast.error(e.message)
     }
   })
@@ -157,7 +269,7 @@ export function OrderCreateFulfillmentForm({
       const initialShippingOptionId =
         order.shipping_methods?.[0]?.shipping_option_id
 
-      if (initialShippingOptionId) {
+      if (initialShippingOptionId && requiresShipping) {
         const shippingOption = shipping_options.find(
           (o) => o?.id === initialShippingOptionId
         )
@@ -167,11 +279,8 @@ export function OrderCreateFulfillmentForm({
             shippingOption.service_zone.fulfillment_set.location.id
 
           form.setValue("location_id", locationId)
-          form.setValue(
-            "shipping_option_id",
-            initialShippingOptionId || undefined
-          )
-        } // else -> TODO: what if original shipping option is deleted?
+          form.setValue("shipping_option_id", initialShippingOptionId)
+        }
       }
     }
   }, [stock_locations?.length, shipping_options?.length])
@@ -227,6 +336,27 @@ export function OrderCreateFulfillmentForm({
         <RouteFocusModal.Body className="flex h-full w-full flex-col items-center divide-y overflow-y-auto">
           <div className="flex size-full flex-col items-center overflow-auto p-16">
             <div className="flex w-full max-w-[736px] flex-col justify-center px-2 pb-2">
+              
+              {/* DEBUG INFO */}
+              <div className="mb-4 p-4 bg-blue-50 rounded border">
+                <h3 className="font-bold text-blue-800">🔍 DEBUG INFO</h3>
+                <p><strong>Selected Location:</strong> {selectedLocationId}</p>
+                <p><strong>Selected Shipping Option:</strong> {shippingOptionId}</p>
+                <p><strong>Requires Shipping:</strong> {requiresShipping ? "Yes" : "No"}</p>
+                <p><strong>Available Shipping Options:</strong> {filteredShippingOptions.length}</p>
+                {filteredShippingOptions.map(opt => (
+                  <div key={opt?.id} className="ml-4">
+                    • {opt?.name} (Profile: {opt?.shipping_profile_id})
+                  </div>
+                ))}
+                <p><strong>Item Shipping Profiles:</strong></p>
+                {order.items.map(item => (
+                  <div key={item.id} className="ml-4">
+                    • {item.title}: {item.variant?.product?.shipping_profile?.id || "No profile"}
+                  </div>
+                ))}
+              </div>
+
               <div className="flex flex-col divide-y divide-dashed">
                 <div className="pb-8">
                   <Form.Field
@@ -269,70 +399,77 @@ export function OrderCreateFulfillmentForm({
                   />
                 </div>
 
-                <div className="py-8">
-                  <Form.Field
-                    control={form.control}
-                    name="shipping_option_id"
-                    render={({ field: { onChange, ref, ...field } }) => {
-                      return (
-                        <Form.Item>
-                          <div className="flex flex-col gap-2 xl:flex-row xl:items-center">
-                            <div className="flex-1">
-                              <Form.Label>
-                                {t("fields.shippingMethod")}
-                              </Form.Label>
-                              <Form.Hint>
-                                {t("orders.fulfillment.methodDescription")}
-                              </Form.Hint>
-                            </div>
-                            <div className="flex-1">
-                              <Form.Control>
-                                <Select
-                                  onValueChange={onChange}
-                                  {...field}
-                                  disabled={!selectedLocationId}
-                                >
-                                  <Select.Trigger
-                                    className="bg-ui-bg-base"
-                                    ref={ref}
+                {requiresShipping && (
+                  <div className="py-8">
+                    <Form.Field
+                      control={form.control}
+                      name="shipping_option_id"
+                      render={({ field: { onChange, ref, ...field } }) => {
+                        return (
+                          <Form.Item>
+                            <div className="flex flex-col gap-2 xl:flex-row xl:items-center">
+                              <div className="flex-1">
+                                <Form.Label>
+                                  {t("fields.shippingMethod")}
+                                </Form.Label>
+                                <Form.Hint>
+                                  {t("orders.fulfillment.methodDescription")}
+                                </Form.Hint>
+                              </div>
+                              <div className="flex-1">
+                                <Form.Control>
+                                  <Select
+                                    onValueChange={onChange}
+                                    {...field}
+                                    disabled={!selectedLocationId}
                                   >
-                                    {isShippingOptionsLoading ? (
-                                      <span className="text-right">
-                                        {t("labels.loading")}
-                                        ...
-                                      </span>
-                                    ) : (
-                                      <Select.Value />
-                                    )}
-                                  </Select.Trigger>
-                                  <Select.Content>
-                                    {filteredShippingOptions.map((o) => (
-                                      <Select.Item key={o?.id} value={o?.id}>
-                                        {o?.name}
-                                      </Select.Item>
-                                    ))}
-                                  </Select.Content>
-                                </Select>
-                              </Form.Control>
+                                    <Select.Trigger
+                                      className="bg-ui-bg-base"
+                                      ref={ref}
+                                    >
+                                      {isShippingOptionsLoading ? (
+                                        <span className="text-right">
+                                          {t("labels.loading")}
+                                          ...
+                                        </span>
+                                      ) : (
+                                        <Select.Value placeholder={
+                                          filteredShippingOptions.length === 0 && selectedLocationId
+                                            ? "No hay opciones de envío disponibles"
+                                            : undefined
+                                        } />
+                                      )}
+                                    </Select.Trigger>
+                                    <Select.Content>
+                                      {filteredShippingOptions.map((o) => (
+                                        <Select.Item key={o?.id} value={o?.id}>
+                                          {o?.name} (Profile: {o?.shipping_profile_id})
+                                        </Select.Item>
+                                      ))}
+                                    </Select.Content>
+                                  </Select>
+                                </Form.Control>
+                              </div>
                             </div>
-                          </div>
-                          <Form.ErrorMessage />
-                        </Form.Item>
-                      )
-                    }}
-                  />
+                            <Form.ErrorMessage />
+                          </Form.Item>
+                        )
+                      }}
+                    />
 
-                  {differentOptionSelected && (
-                    <Alert className="mt-4 p-4" variant="warning">
-                      <span className="-mt-[3px] block font-medium">
-                        {t("labels.beaware")}
-                      </span>
-                      <span className="text-ui-fg-muted">
-                        {t("orders.fulfillment.differentOptionSelected")}
-                      </span>
-                    </Alert>
-                  )}
-                </div>
+                    {differentOptionSelected && (
+                      <Alert className="mt-4 p-4" variant="warning">
+                        <span className="-mt-[3px] block font-medium">
+                          {t("labels.beaware")}
+                        </span>
+                        <span className="text-ui-fg-muted">
+                          {t("orders.fulfillment.differentOptionSelected")}
+                        </span>
+                      </Alert>
+                    )}
+                  </div>
+                )}
+                
                 <div>
                   <Form.Item className="mt-8">
                     <Form.Label>
@@ -344,11 +481,14 @@ export function OrderCreateFulfillmentForm({
 
                     <div className="flex flex-col gap-y-1">
                       {fulfillableItems.map((item) => {
-                        const isShippingProfileMatching =
-                          shipping_options.find(
-                            (o) => o?.id === shippingOptionId
-                          )?.shipping_profile_id ===
+                        const selectedShippingOption = filteredShippingOptions.find(
+                          (o) => o?.id === shippingOptionId
+                        )
+                        
+                        const isShippingProfileMatching = !requiresShipping || (
+                          selectedShippingOption?.shipping_profile_id ===
                           item.variant?.product?.shipping_profile?.id
+                        )
 
                         return (
                           <OrderCreateFulfillmentItem
@@ -372,7 +512,6 @@ export function OrderCreateFulfillmentForm({
                       variant="error"
                       dismissible={false}
                       className="flex items-center"
-                      // classNameInner="flex justify-between flex-1 items-center"
                     >
                       {form.formState.errors.root.message}
                     </Alert>
@@ -424,7 +563,7 @@ export function OrderCreateFulfillmentForm({
               size="small"
               type="submit"
               isLoading={isMutating}
-              disabled={!shippingOptionId}
+              disabled={requiresShipping ? !shippingOptionId : !selectedLocationId}
             >
               {t("orders.fulfillment.create")}
             </Button>

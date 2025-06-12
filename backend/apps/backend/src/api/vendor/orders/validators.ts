@@ -38,6 +38,12 @@ export const VendorGetOrderChangesParams = createSelectParams()
  *   location_id:
  *     type: string
  *     description: The location id.
+ *   shipping_option_id:
+ *     type: string
+ *     description: The shipping option id (optional).
+ *   no_notification:
+ *     type: boolean
+ *     description: Whether to send notification or not (optional).
  *   items:
  *     type: array
  *     description: Items to create fulfillment.
@@ -60,7 +66,9 @@ export const VendorCreateFulfillment = z.object({
     })
   ),
   requires_shipping: z.boolean(),
-  location_id: z.string()
+  location_id: z.string(),
+  shipping_option_id: z.string().optional(),  // ✅ AÑADIDO
+  no_notification: z.boolean().optional()     // ✅ AÑADIDO
 })
 
 /**
