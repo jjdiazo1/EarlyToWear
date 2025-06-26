@@ -1,6 +1,7 @@
 {
-  "/[locale]/(checkout)/checkout/page": "app/[locale]/(checkout)/checkout/page.js",
   "/[locale]/(main)/page": "app/[locale]/(main)/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/[locale]/(main)/cart/page": "app/[locale]/(main)/cart/page.js"
+  "/[locale]/(main)/products/[handle]/page": "app/[locale]/(main)/products/[handle]/page.js",
+  "/[locale]/(main)/cart/page": "app/[locale]/(main)/cart/page.js",
+  "/[locale]/(checkout)/checkout/page": "app/[locale]/(checkout)/checkout/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }
