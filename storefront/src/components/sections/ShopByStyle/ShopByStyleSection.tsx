@@ -145,7 +145,7 @@ export function ShopByStyleSection() {
         }
       `}</style>
       
-      <section className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden">
+      <section className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden flex items-center justify-center py-16"> {/* Added flex classes for centering */}
         {/* Animated Background Decorations */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-indigo-200/30 via-purple-200/30 to-pink-200/30 rounded-full blur-3xl animate-pulse"></div>
@@ -165,7 +165,7 @@ export function ShopByStyleSection() {
           ))}
         </div>
         
-        <div className="relative z-10 container mx-auto px-6 py-16">
+        <div className="relative z-10 container mx-auto px-6 max-w-screen-xl"> {/* Added max-w-screen-xl for centering */}
           {/* Header with AI Status */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-gray-200/50 px-6 py-3 rounded-full mb-8 shadow-lg">
@@ -276,7 +276,7 @@ export function ShopByStyleSection() {
                   <img
                     src="/images/shop-by-styles/Image.jpg"
                     alt="AI Fashion Analysis - Creating Your Perfect Style"
-                    className="w-full h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-[500px] lg:h-[600px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   
                   {/* AI Overlay Effects */}
