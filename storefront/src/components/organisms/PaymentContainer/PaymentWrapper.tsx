@@ -5,6 +5,7 @@ import React from "react"
 import { HttpTypes } from "@medusajs/types"
 import { isStripe } from "@/lib/constants"
 import StripeWrapper from "./StripeWrapper"
+import WompiWrapper from "./WompiWrapper"
 
 type PaymentWrapperProps = {
   cart: HttpTypes.StoreCart
@@ -33,6 +34,11 @@ const PaymentWrapper: React.FC<PaymentWrapperProps> = ({ cart, children }) => {
         {children}
       </StripeWrapper>
     )
+  }
+
+  // lógica para Wompi
+  if (paymentSession?.provider_id === "wompi") {
+    return <WompiWrapper>{children}</WompiWrapper>
   }
 
   return <div>{children}</div>
