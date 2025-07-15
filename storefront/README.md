@@ -2,7 +2,7 @@
 
 <div align="center">
   <h1> B2C Storefront
-    <br> 
+    <br>
 for <a href="https://github.com/mercurjs/mercur">Mercur</a> - Open Source Marketplace Platform  </h1>
   <!-- Shields.io Badges -->
   <a href="https://github.com/mercurjs/mercur/tree/main?tab=MIT-1-ov-file">
@@ -16,8 +16,8 @@ for <a href="https://github.com/mercurjs/mercur">Mercur</a> - Open Source Market
   </a>
   <!-- Website Links -->
   <p>
-  <a href="https://b2c.mercurjs.com/">🛍️ B2C Marketplace Storefront Demo </a> · <a href="https://mercurjs.com/">Mercur Website</a> · <a href="https://docs.mercurjs.com/">📃 Explore the docs</a> 
-  </p> 
+  <a href="https://b2c.mercurjs.com/">🛍️ B2C Marketplace Storefront Demo </a> · <a href="https://mercurjs.com/">Mercur Website</a> · <a href="https://docs.mercurjs.com/">📃 Explore the docs</a>
+  </p>
 </div>
 
 ## B2C Storefront for Marketplace
@@ -111,3 +111,25 @@ npm run dev
 
 <a href="https://www.algolia.com/doc/guides/security/api-keys/" target="_blank">How to get Aloglia Keys</a>
 <a href="https://talkjs.com/docs/Reference/Concepts/Sessions/" target="_blank">How to get TalkJs App ID</a>
+
+# Storefront - Integración Wompi (API directa)
+
+## Variables de entorno necesarias
+
+- `NEXT_PUBLIC_WOMPI_PUBLIC_KEY=pub_test_example`
+- `NEXT_PUBLIC_WOMPI_ENV=sandbox`
+
+## Pasos para la integración
+
+1. Crear los componentes `WompiWrapper` y `WompiPaymentButton`.
+2. Adaptar el flujo de pago para usar la API de Wompi.
+3. Usar las variables de entorno anteriores.
+
+## Documentación oficial
+- [Wompi Colombia - Inicio rápido](https://docs.wompi.co/docs/colombia/inicio-rapido/)
+- [API Reference Wompi](https://docs.wompi.co/docs/colombia/api/)
+- [Widget de pago Wompi](https://docs.wompi.co/docs/colombia/widget/)
+
+---
+
+> **Nota:** Reemplaza los valores de ejemplo por tus llaves reales de Wompi en producción.
