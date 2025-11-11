@@ -142,22 +142,17 @@ export function BrandsListing({ brands, searchQuery = "" }: BrandsListingProps) 
         {filteredBrands.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-20">
             {filteredBrands.map((brand, index) => (
-              <div
-                key={brand.id}
-                className="group relative opacity-100 translate-y-0"
-                style={{ 
-                  animationDelay: `${index * 100}ms`
-                }}
-              >
-               {/* El halo - centrado */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-r from-indigo-600/20 via-purple-600/20 to-pink-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 md:group-hover:opacity-100 transition-all duration-500 group-hover:scale-110 -z-10"></div>                {/* Card wrapper con hover y animación móvil */}
-                <div className="relative transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 animate-fade-in-up md:animate-none">
-                  <BrandCard
-                    seller={brand}
-                    showStats={true}
-                  />
-                </div>
-              </div>
+          <div
+            key={brand.id}
+            className="group relative opacity-100 translate-y-0"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
+
+            {/* Contenido del card */}
+            <div className="relative transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 animate-fade-in-up md:animate-none">
+              <BrandCard seller={brand} showStats={true} />
+            </div>
+          </div>
             ))}
           </div>
         ) : (

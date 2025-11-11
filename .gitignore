@@ -3,6 +3,40 @@ node_modules/
 npm-debug.log
 yarn-debug.log
 yarn-error.log
+.env*
+
+# ====== Next.js build ======
+storefront/.next
+storefront/out
+storefront/next
+storefront/.vercel
+storefront/build
+storefront/.turbo
+
+# ====== Logs ======
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs
+*.log
+
+# ====== IDE / OS ======
+.vscode
+.idea
+*.swp
+Thumbs.db
+
+# ====== Backend (Python / Django / etc.) ======
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+*.log
+env/
+venv/
+backend/apps/backend/staticfiles/
+backend/apps/backend/media/
 
 # Python
 __pycache__/
